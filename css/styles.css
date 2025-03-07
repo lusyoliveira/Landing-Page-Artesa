@@ -13,6 +13,7 @@
     --cor-verde: #1fe516;
     --cor-preto: #212529; 
     --cor-violeta: #8a2be2;
+    --cor-cinza: #F5F5F5;
     --bs-breakpoint-xs: 0;
     --bs-breakpoint-sm: 576px;
     --bs-breakpoint-md: 768px;
@@ -75,15 +76,21 @@ h2 {
     font-size: 36px;
     color: var(--cor-branco);
     padding: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 div {
     display: block;
     unicode-bidi: isolate;
 }
+svg {
+    display: block;
+}
 .cabecalho {
     padding: 0;
     margin: 0;
 }
+/* Menu */
 .navbar {
     position: fixed;
     display: flex;
@@ -120,13 +127,6 @@ div {
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
     color: rgba(255, 255, 255, 0.75);
-}
-.container {
-    width: 100%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
-    margin-right: auto;
-    margin-left: auto;
 }
 .navbar-toggler {
     padding: 0.25rem 0.75rem;
@@ -195,6 +195,14 @@ div {
     margin-right: auto !important;
     margin-left: auto !important;
 }
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+/* Grid */
 .lista {
     display: flex;
     gap: 1em;
@@ -234,6 +242,7 @@ div {
 .lista:hover .item:not(:hover) {
     filter: blur(5px);
 }
+/* Carrossel */
 .contador {
     display: flex;
     justify-content: center;
@@ -261,8 +270,8 @@ div {
     animation: slide 10s infinite linear;
 }
 .carousel-item {
-    min-width: 100%;
-    flex: 1;
+    width: 100%;
+    flex: 0 0 100%;
 }
 .carousel img {
     width: 100%;
@@ -282,6 +291,8 @@ div {
     border-radius: 50%;
     margin: 0 5px;
     display: inline-block;
+    width: 15px;
+    height: 15px;
 }
 .carousel label:hover {
     background: #aaa;
@@ -300,7 +311,7 @@ div {
     34%, 66% { transform: translateX(-100%); }
     67%, 100% { transform: translateX(-200%); }
 }
-
+/* Carrossel produtos */
 .imgCarrossel {
     width: 150px;
     height: 150px;
@@ -318,9 +329,88 @@ div {
 .imagens img:hover {
     width: 160px;
 }
-svg {
-    display: block;
+/* Galeria */
+.galeria {
+    columns: 200px;
+    margin: 0.5em;
+    column-gap: 0.5em;
+
 }
+.galeria img {
+    width: 100%;
+    margin-bottom: 0.5;
+    border-radius: 10px;
+}
+/* Newletter */
+.newsletter {
+    background-color: var(--cor-cinza);
+    display:block; 
+    padding: 20px;
+    margin: 0 10%;
+    width: auto;
+}
+.newsletter form {
+    display: flex;
+    margin: 10px;
+    width: 100%;
+    justify-content: center;
+}
+.newsletter h2 {
+    text-transform: uppercase;
+    color: var(--cor-preto);
+}
+.newsletter input {
+    width: 50%;
+    height: 45px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.newsletter button {
+    background-color: var(--cor-violeta);
+    color: var(--cor-branco);
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+}
+/* Contato */
+.grid-contato {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.grid-contato-box {
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem;
+    width: calc((100% / 2) - 2rem); /* calco para descontar a margem da largura do box se aumenta a marge tem que ajustar aqui tb */
+}
+.grid-contato label {
+    font-size: 16px;
+}
+.grid-contato input {
+    border: 1px solid;
+    border-radius: 5px;
+    height: 35px;
+    width: 100%;
+    display: block;
+    background-color: field;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 1px 0;
+    cursor: text;
+}
+.grid-contato textarea {
+    border: 1px solid;
+    border-radius: 5px;
+    height: 150px;
+    width: 100%;
+    display: block;
+    background-color: field;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+/* Rodape */
 .footer {
     padding-top: 1rem!important;
     padding-bottom: 1rem!important;
@@ -328,4 +418,26 @@ svg {
     --bs-text-opacity: 1;
     color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
     background-color: var(--cor-preto) !important;
+}
+.grid-footer {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.grid-footer-box {    
+    text-align: left;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin: 1rem;
+    gap: 5px;
+    width: calc((100% / 4) - 2rem); /* calco para descontar a margem da largura do box se aumenta a marge tem que ajustar aqui tb */
+}
+.grid-footer-box ul{
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+}
+.grid-footer-title {
+    font-weight: 700;
 }
