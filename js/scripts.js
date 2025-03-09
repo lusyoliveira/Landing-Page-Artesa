@@ -27,27 +27,28 @@
 // document.onclick=desbloquear}
 
 //Contador
-const dataAlvo = new Date("Apr 29, 2025 00:04:25").getTime();
-const intervalo = setInterval(() => {
-    const dataAtual = new Date().getTime();
-    const tempoRestante = dataAlvo - dataAtual;
+if (window.location.pathname === "/index.html") {
+    const dataAlvo = new Date("Apr 29, 2025 00:04:25").getTime();
+    const intervalo = setInterval(() => {
+        const dataAtual = new Date().getTime();
+        const tempoRestante = dataAlvo - dataAtual;
 
-    if (tempoRestante <= 0) {
-        clearInterval(intervalo);
-        return;
-    }
+        if (tempoRestante <= 0) {
+            clearInterval(intervalo);
+            return;
+        }
 
-    const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((tempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
+        const dias = Math.floor(tempoRestante / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((tempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
 
-    document.querySelector("#dias").innerHTML = dias;
-    document.querySelector("#horas").innerHTML = horas;
-    document.querySelector("#minutos").innerHTML = minutos;
-    document.querySelector("#segundos").innerHTML = segundos;
-}, 1000)
-
+        document.querySelector("#dias").innerHTML = dias;
+        document.querySelector("#horas").innerHTML = horas;
+        document.querySelector("#minutos").innerHTML = minutos;
+        document.querySelector("#segundos").innerHTML = segundos;
+    }, 1000)
+}
 //carrosel
 let imagens = document.querySelectorAll('imgCarrossel')
 

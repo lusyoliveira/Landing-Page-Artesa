@@ -13,7 +13,7 @@
     --cor-verde: #1fe516;
     --cor-preto: #212529; 
     --cor-violeta: #8a2be2;
-    --cor-cinza: #F5F5F5;
+    --cor-cinza: #e1e1e5;
     --bs-breakpoint-xs: 0;
     --bs-breakpoint-sm: 576px;
     --bs-breakpoint-md: 768px;
@@ -86,6 +86,42 @@ div {
 svg {
     display: block;
 }
+input {
+   border: 1px solid var(--cor-cinza);
+   border-radius: 5px;
+   display: block;
+   padding: 20px;
+}
+input:focus {
+    outline: none; 
+}
+textarea {
+    border: 1px solid var(--cor-cinza);
+    border-radius: 5px;
+    display: block;
+    padding: 20px;
+ }
+ textarea:focus {
+     outline: none; 
+}
+button {
+    background-color: var(--cor-violeta);
+    color: var(--cor-branco);
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;   
+    outline: none; 
+    box-shadow: none;  
+}
+button:hover {
+    background-color:  var(--cor-violeta);
+  }
+  
+button:active {
+    background-color:  var(--cor-violeta);
+    box-shadow: none;         
+  }
 .cabecalho {
     padding: 0;
     margin: 0;
@@ -242,7 +278,7 @@ svg {
 .lista:hover .item:not(:hover) {
     filter: blur(5px);
 }
-/* Carrossel */
+/* Contador */
 .contador {
     display: flex;
     justify-content: center;
@@ -257,6 +293,7 @@ svg {
     font-size: 40px;
     text-align: center;
 }
+/* Banner Carrossel */
 .carousel {
     position: relative;
     width: 100%;
@@ -362,53 +399,43 @@ svg {
 .newsletter input {
     width: 50%;
     height: 45px;
-    border-radius: 5px;
     margin-right: 10px;
 }
 .newsletter button {
-    background-color: var(--cor-violeta);
-    color: var(--cor-branco);
-    border-radius: 5px;
-    padding: 10px;
     width: 200px;
 }
-/* Contato */
-.grid-contato {
+/* Grid Páginas */
+.grid-pages {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
-.grid-contato-box {
+.grid-pages-box {
     box-sizing: border-box;
     padding: 1rem;
     margin: 1rem;
     width: calc((100% / 2) - 2rem); /* calco para descontar a margem da largura do box se aumenta a marge tem que ajustar aqui tb */
 }
-.grid-contato label {
+.grid-pages label {
     font-size: 16px;
 }
-.grid-contato input {
-    border: 1px solid;
-    border-radius: 5px;
+.grid-pages input {
     height: 35px;
     width: 100%;
-    display: block;
-    background-color: field;
     margin-top: 5px;
     margin-bottom: 10px;
-    padding: 1px 0;
-    cursor: text;
 }
-.grid-contato textarea {
-    border: 1px solid;
-    border-radius: 5px;
+.grid-pages textarea {
     height: 150px;
     width: 100%;
-    display: block;
-    background-color: field;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+.grid-pages img {
+    width: 580px;
+    height: auto;
+    object-fit: scale-down;
 }
 /* Rodape */
 .footer {
@@ -433,11 +460,16 @@ svg {
     gap: 5px;
     width: calc((100% / 4) - 2rem); /* calco para descontar a margem da largura do box se aumenta a marge tem que ajustar aqui tb */
 }
+.grid-footer-box img {
+    width: 100%;
+}
 .grid-footer-box ul{
     text-align: left;
     list-style-type: none;
     padding: 0;
 }
 .grid-footer-title {
+    color: var(--cor-violeta) !important;
     font-weight: 700;
+    font-size: 20px;
 }
