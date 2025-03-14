@@ -48,23 +48,14 @@ if (window.location.pathname === "/index.html") {
         document.querySelector("#minutos").innerHTML = minutos;
         document.querySelector("#segundos").innerHTML = segundos;
     }, 1000)
-}
-//carrosel
-let imagens = document.querySelectorAll('imgCarrossel')
+};
 
-let imagemPrincipal = document.querySelector('#imgPrincipal')
 
-imagens.forEach((imagem) => {
-    imagem.addEventListener("click", (event)=> {
-        imagemPrincipal.src = event.target.src;
-    })
-})
-
-function carregarPagina(pagina) {
-    fetch(pagina)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("conteudo").innerHTML = data;
-        })
-        .catch(error => console.error("Erro ao carregar a página:", error));
-}
+ function carregarPagina(pagina) {
+     fetch(pagina)
+         .then(response => response.text())
+         .then(data => {
+             document.getElementById("conteudo").innerHTML = data;
+         })
+         .catch(error => console.error("Erro ao carregar a página:", error));
+ };
