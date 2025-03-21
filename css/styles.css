@@ -163,6 +163,12 @@ main {
     width: 100%;
     display: block; 
 }
+.container-full {
+    width: 100%;
+    padding: 50px;
+    margin: 50px 0;
+    background-color: var(--cor-preto);
+}
 /* Menu loja*/
 nav {
     position: fixed;
@@ -532,14 +538,112 @@ nav ul li a:hover {
 .grid-column ul{
     text-align: left;
     list-style-type: none;
-    padding: 0;
+    padding: 5px;
+}
+.grid-column li {
+    padding-bottom: 5px;
 }
 .grid-column-title {
     color: var(--cor-violeta) !important;
     font-weight: 700;
     font-size: 20px;
     border-bottom: 3px solid var(--cor-cinza);
+    margin-bottom: 20px;
+    padding: 5px;
 }
+.servicos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--cor-preto);
+}
+.servicos h3 {
+    display: block;
+    line-height: 18px;
+    margin: 5px 0;
+}
+.servicos span {
+    display: block;
+    color: #d1d1d1;
+    font-size: 16px;
+}
+.servicos-left {
+    width: calc((100% - 50px) / 2);
+    float: left;
+    padding: 0;
+    margin: 10px 0;
+    position: relative;
+    transition: all .3s ease;
+    text-align: left;
+}
+.servicos-left:hover {
+    transform:translateY(-9px)!important
+}
+.servicos-left img {
+    float: right;
+    height: 135px;
+    width: 135px;
+    background: rgba(236 236 236 / 18%);
+    border: 5px solid rgba(255 255 255 / 38%);
+    margin-left: 20px;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+.servicos-right {
+    width: calc((100% - 50px) / 2);
+    float: right;
+    padding: 0;
+    margin: 10px 0;
+    position: relative;
+    transition: all .3s ease;    
+    text-align: right;
+}
+.servicos-right:hover {
+    transform:translateY(-9px)!important
+}
+.servicos-right img {
+    float: left;
+    height: 135px;
+    width: 135px;
+    background: rgba(236 236 236 / 18%);
+    border: 5px solid rgba(255 255 255 / 38%);
+    margin-left: 20px;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+.Destaque {
+    float:left;
+    width:100%;
+    padding:0;
+    margin:25px 0 0
+}
+.Destaque h4 {
+    margin:0; 
+    text-align: left;
+}
+.Destaque h5 {
+    margin-top: 10px;
+    text-align: left;
+    font-weight: lighter;
+}
+.Destaque img {
+    position:relative;
+    float:left;
+    width:64px;
+    height:64px;
+    overflow:hidden;
+    z-index:1;
+    margin:0 13px 0 0;
+    border-radius:6px;
+    object-fit: cover;
+}
+
 /* Rodape */
 .footer {
     padding-top: 1rem!important;
@@ -551,4 +655,7 @@ nav ul li a:hover {
 }
 .footer i {
     font-size: 40px;
+}
+.social {
+    margin: 10px 0;
 }
