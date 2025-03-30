@@ -27,7 +27,7 @@
 // document.onclick=desbloquear}
 
 //Contador
-if (window.location.pathname === "/index.html") {
+//if (window.location.pathname === "/index.html") {
     const dataAlvo = new Date("Apr 29, 2025 00:04:25").getTime();
     const intervalo = setInterval(() => {
         const dataAtual = new Date().getTime();
@@ -47,10 +47,10 @@ if (window.location.pathname === "/index.html") {
         document.querySelector("#horas").innerHTML = horas;
         document.querySelector("#minutos").innerHTML = minutos;
         document.querySelector("#segundos").innerHTML = segundos;
-    }, 1000)
-};
+    }, 1000);
+//};
 
-
+//Abrir Página
  function carregarPagina(pagina) {
      fetch(pagina)
          .then(response => response.text())
