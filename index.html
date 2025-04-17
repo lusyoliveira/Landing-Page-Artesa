@@ -10,36 +10,24 @@
 <body>
     <!-- Cabeçalho -->
     <header class="cabecalho">
-        <!-- Menu -->
-        <!-- <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <div class="collapse navbar-collapse" id="menu">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="loja.html">Loja</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" onclick="carregarPagina('portfolio.html')">Portfólio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" onclick="carregarPagina('blog.html')">Blog</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>  -->
-        
+        <!-- Menu -->      
          <nav>
-            <button title="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span></span>
-            </button>
+            <button onclick="abrirMenu()"><span></span></button>
             <a href="index.html"><img src="img/Logo (2).png" title="logo"></a>
-            <ul>                
-                <li><a href="index.html">Home</a></li>
-                <li><a href="loja.html">Loja</a></li>
-                <li><a href="#" onclick="carregarPagina('portfolio.html')">Portfólio</a></li>
-                <li><a href="#" onclick="carregarPagina('blog.html')">Blog</a></li>
-            </ul>
+            <form role="search">
+                <input type="search" placeholder="Buscar..." aria-label="Search">
+            </form>
         </nav>
-        
+    
+        <!-- Menu Lateral -->
+        <div id="menuLateral" class="side-menu">
+            <span class="close-btn" onclick="fecharMenu()">×</span>
+            <a href="index.html">Home</a>
+            <a href="loja.html">Loja</a>
+            <a href="#" onclick="carregarPagina('portfolio.html')">Portfólio</a>
+            <a href="#" onclick="carregarPagina('blog.html')">Blog</a>
+        </div>
+
         <div class="banner">
             <img src="img/Banner (1).png" title="Banner 1">
             <div class="banner-text">
@@ -47,33 +35,35 @@
                 <p>Trabalhos de Lettering e Encadernação</p>
             </div>
         </div>
-        <!-- <div><img src="img/Banner (1).png" alt="Slide 2"></div> -->
     </header>
 
-    <main>
+    <main class="container">
+        <div id="conteudo">
             <!-- Contador -->
-            <h2>Lançamento</h2>
-            <div class="contador">
-                <div>
-                    <p id="dias">00</p>
-                    <span>dias</span>
-                </div>
-                <div>
-                    <p id="horas">00</p>
-                    <span>horas</span>
-                </div>
-                <div>
-                    <p id="minutos">00</p>
-                    <span>minutos</span>
-                </div>
-                <div>
-                    <p id="segundos">00</p>
-                    <span>segundos</span>
+            <div>
+                <h2>Lançamento</h2>
+                <div class="contador">
+                    <div>
+                        <p id="dias">00</p>
+                        <span>dias</span>
+                    </div>
+                    <div>
+                        <p id="horas">00</p>
+                        <span>horas</span>
+                    </div>
+                    <div>
+                        <p id="minutos">00</p>
+                        <span>minutos</span>
+                    </div>
+                    <div>
+                        <p id="segundos">00</p>
+                        <span>segundos</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Sobre -->
-            <div class="container-full">
+            <div>
                 <h2>Sobre</h2>
                 <div class="grid">
                     <div class="grid-column">
@@ -97,9 +87,9 @@
                     <a  href="#" onclick="carregarPagina('portfolio.html')">Confira</a></li>
                 </div>
             </div>
-            
+                
             <!-- Contato -->
-            <div class="container">
+            <div>
                 <h2>Contato</h2>
                 <div class="grid">
                     <div class="grid-column">
@@ -119,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="container-full">
+            <div class="servicos-principal">
                 <h2>Tipos de Produtos</h2>
                 <div class="servicos">   
                     <div class="servicos-left">
@@ -144,40 +134,39 @@
                     </div> 
                 </div>    
             </div>
-
             <!-- Newsletter -->
-            <div class="container">
-                <div class="newsletter">
-                    <h2>Recebe dicas, novidades e ofertas!</h2>
-                    <form id="newsletter">
-                        <input type="email" placeholder="Email">
-                        <button type="submit">Participar</button>    
-                    </form>
-                </div>
+            <div class="newsletter">
+                <h2>Recebe dicas, novidades e ofertas!</h2>
+                <form id="newsletter">
+                    <input type="email" placeholder="Email">
+                    <button type="submit">Participar</button>    
+                </form>
             </div>
 
-        <!-- Grid -->
-        <h2>Últimas Postagens do Blog</h2>
-        <div class="lista">
-            <div class="item">
-                <img src="img/Caderno (1).jpg">
-                <p>Planner</p>
-            </div>
-            <div class="item">
-                <img src="img/Caderno (2).jpg">
-                <p>Diário de Gratidão</p>
-            </div>
-            <div class="item">
-                <img src="img/Caderno (3).JPG">
-                <p>Grimório</p>
-            </div>
-            <div class="item">
-                <img src="img/Caderno (4).jpg">
-                <p>Grimório</p>
-            </div>
+            <!-- Grid -->
+            <div>
+                <h2>Últimas Postagens do Blog</h2>
+                <div class="lista">                
+                    <div class="item">
+                        <img src="img/Caderno (1).jpg">
+                        <p>Planner</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/Caderno (2).jpg">
+                        <p>Diário de Gratidão</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/Caderno (3).JPG">
+                        <p>Grimório</p>
+                    </div>
+                    <div class="item">
+                        <img src="img/Caderno (4).jpg">
+                        <p>Grimório</p>
+                    </div>
+                </div>    
+            </div>        
         </div>
-    
-    </main>        
+    </main>
 
     <!-- Rodapé -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
