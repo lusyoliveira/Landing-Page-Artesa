@@ -12,37 +12,50 @@
     <header class="cabecalho">
         <!-- Menu -->      
          <nav>
-            <button onclick="abrirMenu()"><span></span></button>
-            <a href="index.html"><img src="img/Logo (2).png" title="logo"></a>
+            <a href="#" onclick="abrirMenu()"><span><i class="bi bi-list"></i></span></a>
             <form role="search">
                 <input type="search" placeholder="Buscar..." aria-label="Search">
             </form>
+            <ul>
+                <li><a href="#" alt="Conta"><i class="bi bi-person-circle"></i></a></li>
+                <li><a href="#" alt="Carrinho"><i class="bi bi-cart"></i></a></li>
+            </ul>
         </nav>
     
         <!-- Menu Lateral -->
         <div id="menuLateral" class="side-menu">
-            <span class="close-btn" onclick="fecharMenu()">×</span>
+            <span class="close-btn" onclick="fecharMenu()"><i class="bi bi-x-lg"></i></span>
             <a href="index.html">Home</a>
-            <a href="loja.html">Loja</a>
+            <a href="#" onclick="carregarPagina('loja.html')">Loja</a>
             <a href="#" onclick="carregarPagina('portfolio.html')">Portfólio</a>
             <a href="#" onclick="carregarPagina('blog.html')">Blog</a>
         </div>
 
-        <div class="banner">
-            <img src="img/Banner (1).png" title="Banner 1">
-            <div class="banner-text">
-                <h2>Bem-Vindo!</h2>
-                <p>Trabalhos de Lettering e Encadernação</p>
+        <section class="carousel">
+            <input type="radio" name="carousel" id="slide1" checked>
+            <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+            
+            <div class="carousel-inner">
+                <div class="carousel-item"><img src="img/Banner (1).jpg" alt="Slide 1"></div>
+                <div class="carousel-item"><img src="img/Banner (2).jpg" alt="Slide 2"></div>
+                <div class="carousel-item"><img src="img/Banner (3).jpg" alt="Slide 3"></div>
             </div>
-        </div>
+            
+            <div class="carousel-controls">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+            </div>
+        </section>
     </header>
 
     <main class="container">
         <div id="conteudo">
             <!-- Contador -->
-            <div>
+            <div class="contador">
                 <h2>Lançamento</h2>
-                <div class="contador">
+                <div class="contador-grid">
                     <div>
                         <p id="dias">00</p>
                         <span>dias</span>
@@ -65,11 +78,11 @@
             <!-- Sobre -->
             <div>
                 <h2>Sobre</h2>
-                <div class="grid">
-                    <div class="grid-column">
+                <div class="grid-sobre">
+                    <div class="grid-sobre-column">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI_nytlZO4T0dLXpiW8zFUzfbtYl_Sq5rN34v7yVEbvQZrqsGTKE8PU1qYU4k1cW2k7lGjveAZeKk5V8LPAxb6Y3Px47Fr3N6zHYfpgzmRpo2kb3Rdx_tjw4ygmSF7dCUzo6613nvM3TrCRG0fKafa-_qxmLIIIne6cQXWcPo0nb-wFns/s1600/IMG_1706.JPG" title="Perfil">
                     </div>                        
-                    <div class="grid-column">
+                    <div class="grid-sobre-column">
                         <p>Me chamo Luciene tenho 32 anos, a pessoa por trás da loja. Eu fiz meu primeir caderno em 2017, para mim mesma poder utilizar como bullet journal, metódo que eu tinha acabado de conhecer.</p>
                         <p>Eu gostei tanto do processo de produção do caderno que decidi começar vender, e a loja se tornou o ínicio de um sonho de ser minha pprópria chefe.</p>
                         <p>Então a partir de 2018 decidir focar minha energia em aprender mais sobre o que é lettering e poder trabalhar em algo que eu ame.</p>
@@ -91,8 +104,8 @@
             <!-- Contato -->
             <div>
                 <h2>Contato</h2>
-                <div class="grid">
-                    <div class="grid-column">
+                <div class="grid-contato">
+                    <div class="grid-contato-column">
                         <form action="https://formsubmit.co/contato.losart@outlook.com" method="post" class="contato">
                             <input type="text" placeholder="Nome" required>
                             <input type="email" placeholder="Email" required>
@@ -103,31 +116,31 @@
                             <button type="submit">Enviar</button>
                         </form>
                     </div>    
-                    <div class="grid-column">
+                    <div class="grid-contato-column">
                         <p>Tem alguma dúvida ou quer fazer alguma encomenda? Pode me enviar uma mensagem por aqui ou diretamente para o email contato.lucienesilva@outlook.com, ou pelos canais de mensagem Whatsapp e Telegram</p>
                     </div>
                 </div>
             </div>
 
-            <div class="servicos-principal">
+            <div class="produtos-principal">
                 <h2>Tipos de Produtos</h2>
-                <div class="servicos">   
-                    <div class="servicos-left">
+                <div class="produtos">   
+                    <div class="produtos-left">
                         <h3>Cadernos A5 e A6</h3>
                         <img src="img/Caderno (2).jpg" title="Caderno">
                         <span>Cadernos no tamanhos mais comun com A5 e A6 são perfeitos para levar facilmente onde quiser, e pode facilitar o registro de informações diárias</span>
                     </div>     
-                    <div class="servicos-left">
+                    <div class="produtos-left">
                         <h3>Grimórios</h3>
                             <img src="img/Caderno (8).JPG">
                             <span>Para os amantes do esoterismo e wicca, grimórios são os livros perfeitos para armazenar rituas e magias, expressando a verdadeira natureza do dono.</span>
                     </div>    
-                    <div class="servicos-right">
+                    <div class="produtos-right">
                         <h3>Cadernos Quadrados</h3>
                             <img src="img/Caderno (10).JPG">
                             <span>Para quem deseja mais espaço além do A5, os caderno quadrads prporcionam mais espaço eu uma liberdade maior para criar escrever qualquer coisa!</span>
                     </div>    
-                    <div class="servicos-right">
+                    <div class="produtos-right">
                         <h3>Agendas e Planner</h3>
                             <img src="img/Caderno (5).jpg">
                             <span>Para aqueles que desejam praticidade e organização plena, as agenda e planner trazer a facilidade ao dia-a-dia no planjamento de compromissões, metas e tarefas.</span>
@@ -143,25 +156,25 @@
                 </form>
             </div>
 
-            <!-- Grid -->
-            <div>
+            <!-- Blog -->
+            <div class="blog">
                 <h2>Últimas Postagens do Blog</h2>
-                <div class="lista">                
-                    <div class="item">
+                <div class="blog-grid">                
+                    <div class="blog-item">
                         <img src="img/Caderno (1).jpg">
-                        <p>Planner</p>
+                        <h3>Review: Diário em Tópicos</h3>
                     </div>
-                    <div class="item">
+                    <div class="blog-item">
                         <img src="img/Caderno (2).jpg">
-                        <p>Diário de Gratidão</p>
+                        <h3>6 Artistas para Aprender Lettering</h3>
                     </div>
-                    <div class="item">
+                    <div class="blog-item">
                         <img src="img/Caderno (3).JPG">
-                        <p>Grimório</p>
+                        <h3>Review: The Golden Secret Of Lettering</h3>
                     </div>
-                    <div class="item">
+                    <div class="blog-item">
                         <img src="img/Caderno (4).jpg">
-                        <p>Grimório</p>
+                        <h3>5 Canais do Youtube sobre Bullet Journal</h3>
                     </div>
                 </div>    
             </div>        
@@ -174,13 +187,12 @@
         </path>
     </svg>
     <footer class="footer">
-        <div class="container">
-            <div class="grid">   
-                <div class="grid-column">
+            <div class="footer-grid">   
+                <div class="footer-grid-column">
                     <img src="img/Logo (2).png">
                 </div> 
-                <div class="grid-column">
-                    <div class="grid-column-title">Loja</div>
+                <div class="footer-grid-column">
+                    <div class="footer-grid-column-title">Loja</div>
                     <ul>
                         <li>Álbuns de Fotos</li>
                         <li>Agendas e Planners</li>
@@ -191,44 +203,43 @@
                         <li>Planners Digitais</li>
                     </ul>
                 </div>    
-                <div class="grid-column">
-                    <div class="grid-column-title">Último Projetos</div>                    
-                        <div class="Destaque">
+                <div class="footer-grid-column">
+                    <div class="footer-grid-column-title">Último Projetos</div>                    
+                        <div class="footer-grid-column-destaque">
                             <img class="thumb" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN1sjQslgtkTojSDwGBcJrru9ZdMLqTKft6j2kMq5FQrqWZXlQTFtcoM2i8F1u8a7-7u8d3fnYBku6FpGEP7T_u3MNP92RkaUXZD3L-N5y8oqvcliCtT-N6lrhCotzFlYvWNnFLYAJ3nHmFc_lKphUELRG9IsIZU5mHWXYkrKrTSpHWcGipElpRmlaixCB/s1600/I%27II%20Be%20Loving%20Ano%20Great%20Challenge%20%282%29.png">
                             <h4>I'll Be Loving Another Great Challenge</h4>
                             <h5>21/03/2025 - Por Admin</h5>
                         </div>
-                        <div class="Destaque">
+                        <div class="footer-grid-column-destaque">
                             <img class="thumb" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAMhL-FQxWLeqKdgAcge__BMwbYVbLJhLpdbhCmymng_GHGOXQIfW529R43l51X6LmR8wb2awJbKGfWAF2uyW9HBL-UXqdX0c5UknOikXDfXvLDHq883hp15nCtoBeImghxQe2cseGDI4-g8uYLhWpQc_ugSaXOhAiIuOOz82yGe1_HbCQC9KDNOJ3cdYb/s1600/A%20Melhor%20Hora%20%C3%A9%20Agora.jpg">
                             <h4>A Melhor Aora é Agora</h4>
                             <h5>21/03/2025 - Por Admin</h5>
                         </div>
-                        <div class="Destaque">
+                        <div class="footer-grid-column-destaque">
                             <img class="thumb" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKeWlievca4pZl_P0MLAlmTbUXKNLRLgWUugfQxtLbm4QOSQi0McDyxgeKmzGHsyluHwDH0PWpEQCn6gos9-Jfpo_mMer5XtCbAyjr5KwBqhcpYZlXKlp2Mg2e7I41kq_ulV8IKbXK-6_lyiE5GaFwYGox_vynONnvMJQ2YWRSwf82oPY/s1600/Aprenda-Algo-Novo.png">
                             <h4>Aprende Algo Novo</h4>
                             <h5>21/03/2025 - Por Admin</h5>
                         </div>
                 </div>   
-                <div class="grid-column">
-                    <div class="grid-column-title">Últimas Postagens</div>
-                    <div class="Destaque">
+                <div class="footer-grid-column">
+                    <div class="footer-grid-column-title">Últimas Postagens</div>
+                    <div class="footer-grid-column-destaque">
                         <img class="thumb" src="img/Caderno (6).jpg">
                         <h4>Caaso tenha algum mensagem</h4>
                         <h5>21/03/2025 - Por Admin</h5>
                     </div>
-                    <div class="Destaque">
+                    <div class="footer-grid-column-destaque">
                         <img class="thumb" src="img/Caderno (6).jpg">
                         <h4>Caaso tenha algum mensagem</h4>
                         <h5>21/03/2025 - Por Admin</h5>
                     </div>
-                    <div class="Destaque">
+                    <div class="footer-grid-column-destaque">
                         <img class="thumb" src="img/Caderno (6).jpg">
                         <h4>Caaso tenha algum mensagem</h4>
                         <h5>21/03/2025 - Por Admin</h5>
                     </div>
                 </div>
             </div>    
-        </div>
         
         <div class="social">
             <a href="#" class="text-white mx-2"><i class="bi bi-facebook"></i></a>

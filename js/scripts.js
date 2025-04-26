@@ -62,12 +62,8 @@
 
  function abrirMenu() {
     document.getElementById("menuLateral").style.width = "250px";
-}
+};
 
 function fecharMenu() {
     document.getElementById("menuLateral").style.width = "0";
-}
-
-function carregarPagina(pagina) {
-    alert("Carregando: " + pagina); // aqui vai o seu carregamento AJAX ou redirecionamento
-}
+};
