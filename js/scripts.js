@@ -28,7 +28,7 @@
 
 //Contador
 //if (window.location.pathname === "/index.html") {
-    const dataAlvo = new Date("Apr 29, 2025 00:04:25").getTime();
+    const dataAlvo = new Date("Apr 29, 2026 00:04:25").getTime();
     const intervalo = setInterval(() => {
         const dataAtual = new Date().getTime();
         const tempoRestante = dataAlvo - dataAtual;
@@ -67,3 +67,26 @@
 function fecharMenu() {
     document.getElementById("menuLateral").style.width = "0";
 };
+
+//Slider
+const images = document.querySelectorAll('#imageSlider img');
+let currentIndex = 0;
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+    images[currentIndex].classList.add('active');
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    images[currentIndex].classList.add('active');
+});
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    images[currentIndex].classList.add('active');
+}, 5000);
