@@ -626,7 +626,6 @@ nav ul li {
     margin: 10px 0;
 }
 
-/* Menu Responsivo */
 @media (max-width: 600px) {
     nav {
         align-items: center;
