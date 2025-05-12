@@ -144,6 +144,8 @@ button:active {
     color: white;
     font-size: 1.5rem;
     margin: 10px 10px 50px 10px;
+    padding: 5px;    
+    background-color: blueviolet;
 }
 .banner img {
     width: 100%;
@@ -324,17 +326,17 @@ nav ul li {
     font-size: 1rem;
 }
 .grid-sobre-column img {
-    width: 50%;
+    width: 85%;
     height: auto;
     object-fit: scale-down;
     justify-items: center;
-    padding: 0 250px;
+    padding: 0 130px;
 }
 .grid-sobre-column p {
     text-align:justify;
     color: var(--cor-branco);
     font-size: 1.25rem;
-    padding: 50px 200px 0 0;
+    padding: 0px 130px 0 0;
 }
 .contato {
     margin: 30px 10px 30px 10px;
