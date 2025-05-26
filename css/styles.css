@@ -547,6 +547,25 @@ nav ul li {
 .blog-item:hover img{
     transform: scale(1.05);
 }
+/* Grid Template */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+    background-color: transparent;
+    padding: 10px;
+}
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+.grid-container img {
+    object-fit: cover;
+    width: 150px;
+}
 /* Rodape */
 .footer {
     padding-top: 1rem!important;
