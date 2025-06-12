@@ -253,29 +253,14 @@ nav ul li {
 .slider-controls button:hover {
     background: rgba(0, 0, 0, 0.8);
 }
-/* Contador */
-.contador-conteudo {
-    display: flex;
-    justify-content: center;
-    gap: 5em;
-    width: 100%;
-    margin: 10px;
-}
-.contador-conteudo div p {
-    font-size: 6.25rem;
-    text-align: center;
-}
-.contador-conteudo div span {
-    font-size: 2.5rem;
-    text-align: center;
-}
 
 /* sobre*/
-.sobre-conteudo {
+.sobre-conteudo,
+.contato-conteudo {
     display: flex;
     justify-content: space-around;
     gap:1em;
-    margin: auto 25em;
+    margin: auto 10%;
 }
 .sobre-imagem img{
     width: auto;
@@ -311,9 +296,9 @@ nav ul li {
 }
 .testemunho-conteudo {
     display: flex;
-    gap: 1.85em;
+    gap: 1em;
     padding: .8em;
-    margin: auto 10em;
+    margin: auto 10%;
     background-color:transparent;
     text-align: center;
     font-size: 30px;
@@ -329,11 +314,11 @@ nav ul li {
 .testemunho-item, .testemunho-descricao {
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 5px; 
 }
 .testemunho-pessoa img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 100px;
     object-fit: cover;
 }
@@ -341,17 +326,13 @@ nav ul li {
     font-size: .6em;
 }
 .testemunho-item p  {
-    font-size: .5em;
+    font-size: .4em;
     text-align:center;
 }
 .testemunho-classificacao {
-    font-size: .5em;
+    font-size: .4em;
 }
 /* conteudo */
-.contato-conteudo {
-    display: flex;
-    gap: 20px; 
-}
 .contato-conteudo-item {
     flex: 1; 
     padding: 20px;
@@ -386,7 +367,7 @@ nav ul li {
     grid-gap: 30px;
     background-color: transparent;
     padding: 10px;
-    margin: auto 25em;
+    margin: auto 15%;
 }
 .produtos-conteudo-item {
     display: flex;
@@ -400,12 +381,11 @@ nav ul li {
     margin: 5px 0;
     color: var(--cor-branco);
 }
-.produtos-conteudo-item span {
+.produtos-conteudo-item p {
     display: block;
     color: var(--cor-branco);
-    font-size: 1rem;
-    font-weight:lighter;
-    text-align: center;
+    font-size: .7em;
+    text-align:center;
 }
 .produtos-conteudo-item img {
     height: 135px;
@@ -438,42 +418,36 @@ nav ul li {
 /* Galeria de Imagens*/
 .galeria {
     columns: 200px;
-    margin: 0.5em;
+    margin: 1em;
     column-gap: 0.5em;
 }
 .galeria img {
     width: 100%;
-    margin-bottom: 0.5;
+    margin-bottom: 1em;
     border-radius: 10px;
 }
 /* Newletter */
 .newsletter-conteudo {
-    background-color: var(--cor-cinza-claro);
     display:flex; 
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    margin: 0 6%;
+    justify-content: space-around;
+    align-items: center;
     color: var(--cor-branco);
 }
 .newsletter-conteudo form {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    margin: 10px;
-    justify-content: center;
-}
-.newsletter-conteudo h2 {
-    text-transform: uppercase;
-    color: var(--cor-preto);
+    justify-content: space-between;
+    align-items: center;
 }
 .newsletter-conteudo input {
-    width: 50%;
+    width: 100%;
     height: auto;
-    margin-right: 10px;
     border:none;
+    padding: 10px;
 }
 .newsletter-conteudo button {
-    width: 200px;
+    width: 100%;
 }
 /* Blog */
 .blog-conteudo  {
@@ -546,6 +520,132 @@ nav ul li {
     justify-content: space-between;   
     color: var(--cor-violeta);
 }
+.postagem-destaque-conteudo {
+    background-color: var(--cor-cinza-escuro);
+    margin: auto 10%;
+    border-radius: 10px;
+    padding: 30px;
+}
+.postagem-destaque-descricao {
+    width: 50%;
+}
+.postagem-destaque-descricao h2 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.postagem-destaque-descricao p, .postagem-link {
+    text-align: left;
+    margin: 30px 0;
+    font-size: 1.25em;
+    font-weight: 300;
+}
+.postagem-blog {
+    margin: 5% 10%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.postagem-blog-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    width: 70%;   
+    color: var(--cor-violeta);
+}
+.postagem-conteudo-item {
+    transition: 1s;
+    display: flex;
+    background-color: var(--cor-cinza-claro);
+    border-radius: 10px;
+}
+.postagem-imagem {
+    width: 80%;
+}
+.postagem-imagem img {
+    height: 100%;
+    width: 100%;
+}
+.postagem-conteudo-detalhes {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+}
+.postagem-conteudo-detalhes h3 { 
+    font-size: 1.5em;
+}
+.postagem-tags {
+    color: var(--cor-violeta);
+    font-size: 1.0em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.postagem-data {
+    margin: 5px 0; 
+    font-size: .9em;
+}
+.postagem-menu {
+    width: 30%;
+}
+.postagem-menu-sobre {
+    background-color: var(--cor-cinza-escuro);
+    border-radius: 10px;
+    padding: 2em;
+}
+.postagem-menu-sobre h4 {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+.postagem-menu-recentes, 
+.postagem-menu-categoria,
+.postagem-menu-arquivo {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+.postagem-menu-titulo {
+    font-size: 1.5em;
+    padding-bottom:10px;
+    border-bottom: 3px solid var(--cor-branco);
+}
+.postagem-recentes-conteudo, 
+.postagem-categoria-conteudo,
+.postagem-arquivo-conteudo {
+    display: block;
+    padding: .4em;
+  }
+.postagem-recentes-item {
+    display: flex;
+    gap: 1em;
+    padding:1em;
+    border-bottom: 1px solid var(--cor-branco);
+}
+.postagem-recentes-detalhes h6 {
+    font-size: 1em;
+}
+.postagem-recentes-detalhes small {
+    padding-top: 2em;
+    text-transform: uppercase;
+}
+ .postagem-recentes-item img {
+    width:64px;
+    height:64px;
+    border-radius:6px;
+    object-fit: cover;
+}
+.postagem-categoria-conteudo li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.postagem-categoria-conteudo li span {
+    background-color: var(--cor-preto);
+    border-radius: 100px;
+    padding: 2px 6px;
+}
+.postagem-arquivo-conteudo li {
+    margin: 5px 0;
+}
 /* card de produto */
 .card-produto {
     display: grid;
@@ -616,7 +716,7 @@ nav ul li {
     float:left;
     width:100%;
     padding:0;
-    margin:25px 0 0
+    margin: 0 0 25px
 }
 .footer-conteudo-item-destaque h4 {
     margin:0; 
