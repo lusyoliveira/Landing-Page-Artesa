@@ -13,6 +13,7 @@ O site inclui:
 - HTML5: Estrutura e semântica.
 - CSS3: Estilização, responsividade.
 - Bootstrap: ícones.
+- Imagens dos testemunho obtidas do site: https://www.pexels.com/pt-br/
 
 ## Como Executar Localmente
 1. Faça o clone do repositório:
