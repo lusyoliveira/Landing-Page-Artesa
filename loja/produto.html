@@ -10,8 +10,8 @@
 <body>
     <!-- Cabeçalho -->
     <header class="cabecalho">
-        <!-- Menu -->      
-         <nav>
+        <!-- Menu -->  
+          <nav>
             <span><i class="bi bi-list"></i></span>
             <ul>
                 <li><a href="index.html" alt="Conta">Inicio</a></li>
@@ -26,40 +26,26 @@
                 <li><a href="#" alt="Conta"><i class="bi bi-person-circle"></i></a></li>
                 <li><a href="#" alt="Carrinho"><i class="bi bi-cart"></i></a></li>
             </ul>
-        </nav>
-
-        <section class="cabecalho">
-                <div class="cabecalho-conteudo">
-                    <h1 class="titulo">Bem-Vindo</h1>
+        </nav>    
+         
+        <section class="carrossel-container">
+                    <div class="carrossel-column">
+                        <div class="carrossel" id="imagecarrossel">
+                            <img src="img/Banner (1).jpg" alt="Imagem 1" class="active">
+                            <img src="img/Banner (2).jpg" alt="Imagem 2">
+                            <img src="img/Banner (3).jpg" alt="Imagem 3">
+                        </div>
+                        <div class="carrossel-controls">
+                            <button id="prevBtn"><i class="bi bi-caret-left-fill"></i></button>
+                            <button id="nextBtn"><i class="bi bi-caret-right-fill"></i></button>
+                        </div>
+                    </div>
                 </div>
         </section>
     </header>
 
     <main class="container">
-         <section class="conteudo">
-                <h2>Contato</h2>
-                <div class="contato-conteudo">
-                    <div class="contato-conteudo-item">
-                        <form action="https://formsubmit.co/contato.losart@outlook.com" method="post" class="contato">
-                            <input type="text" placeholder="Nome" required>
-                            <input type="email" placeholder="Email" required>
-                            <input type="text" placeholder="Assunto">
-                            <input type="hidden" name="_next" value="obrigado.html">
-                            <label>Mensagem:</label>
-                            <textarea></textarea>
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </div>    
-                    <div class="contato-conteudo-item">
-                        <p>Tem alguma dúvida ou quer fazer alguma encomenda? Pode me enviar uma mensagem por aqui ou diretamente para o email ou pelos canais de mensagem Whatsapp e Telegram</p>
-                        <div class="sobre-social">
-                            <a href="mailto:contato.lucienesilva@outlook.com" class="text-white mx-2"><i class="bi bi-envelope-fill"></i></a>
-                            <a href="#" class="text-white mx-2"><i class="bi bi-whatsapp"></i></i></a>
-                            <a href="#" class="text-white mx-2"><i class="bi bi-telegram"></i></i></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        
     </main>
 
     <!-- Rodapé -->
@@ -69,7 +55,7 @@
     </svg>
     <footer class="footer">
             <div class="footer-conteudo">   
-                <div class="footer-conteudo-item">
+                <div class="footer-conteudo-item">                    
                     <img src="img/Logo.png">
                     <div class="footer-conteudo-social">
                         <a href="www.instagram.com/lucieneoliveirart"><i class="bi bi-instagram"></i></a>
@@ -78,7 +64,7 @@
                     </div>
                 </div> 
                 <div class="footer-conteudo-item">
-                    <div class="footer-conteudo-item-titulo">Produtos</div>
+                    <div class="footer-conteudo-item-titulo">Categorias</div>
                         <ul>
                             <li>Álbuns de Fotos</li>
                             <li>Agendas</li>
@@ -90,25 +76,16 @@
                         </ul>
                 </div>    
                 <div class="footer-conteudo-item">
-                    <div class="footer-conteudo-item-titulo">Último Projetos</div>                    
-                        <div class="footer-conteudo-item-destaque">
-                            <img class="thumb" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjN1sjQslgtkTojSDwGBcJrru9ZdMLqTKft6j2kMq5FQrqWZXlQTFtcoM2i8F1u8a7-7u8d3fnYBku6FpGEP7T_u3MNP92RkaUXZD3L-N5y8oqvcliCtT-N6lrhCotzFlYvWNnFLYAJ3nHmFc_lKphUELRG9IsIZU5mHWXYkrKrTSpHWcGipElpRmlaixCB/s1600/I%27II%20Be%20Loving%20Ano%20Great%20Challenge%20%282%29.png">
-                            <h4>I'll Be Loving Another Great Challenge</h4>
-                            <h5>01/03/2020 - Por Luciene</h5>
-                        </div>
-                        <div class="footer-conteudo-item-destaque">
-                            <img class="thumb" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAMhL-FQxWLeqKdgAcge__BMwbYVbLJhLpdbhCmymng_GHGOXQIfW529R43l51X6LmR8wb2awJbKGfWAF2uyW9HBL-UXqdX0c5UknOikXDfXvLDHq883hp15nCtoBeImghxQe2cseGDI4-g8uYLhWpQc_ugSaXOhAiIuOOz82yGe1_HbCQC9KDNOJ3cdYb/s1600/A%20Melhor%20Hora%20%C3%A9%20Agora.jpg">
-                            <h4>A Melhor Hora é Agora</h4>
-                            <h5>04/05/2020 - Por Luciene</h5>
-                        </div>
-                        <div class="footer-conteudo-item-destaque">
-                            <img class="thumb" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKeWlievca4pZl_P0MLAlmTbUXKNLRLgWUugfQxtLbm4QOSQi0McDyxgeKmzGHsyluHwDH0PWpEQCn6gos9-Jfpo_mMer5XtCbAyjr5KwBqhcpYZlXKlp2Mg2e7I41kq_ulV8IKbXK-6_lyiE5GaFwYGox_vynONnvMJQ2YWRSwf82oPY/s1600/Aprenda-Algo-Novo.png">
-                            <h4>Aprende Algo Novo</h4>
-                            <h5>06/06/2020 - Por Luciene</h5>
-                        </div>
+                    <div class="footer-conteudo-item-titulo">Informações</div>                    
+                        <ul>
+                        <li>Fretes e Entregas</li>
+                        <li>Trocas e Devoluções</li>
+                        <li>Politticas de Privacidades</li>
+                        <li>Fale Conosco</li>
+                    </ul>
                 </div>   
                 <div class="footer-conteudo-item">
-                    <div class="footer-conteudo-item-titulo">Sobre Nós</div>    
+                    <div class="footer-conteudo-item-titulo">Atendimento</div>    
                         <ul>
                             <li>Segunda a Sexta</li>
                             <li>de 9h ás 12h e 14hs ás 18hs</li>
