@@ -59,19 +59,41 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>João</td>
-                                <td>25</td>
+                                <td>
+                                    <div class="loja-carrinho-produto">
+                                        <img src="/img/Caderno (1).jpg" title="">
+                                        <p>Caderno Aquarela</p>
+                                    </div>                                    
+                                </td>
+                                <td>
+                                    <div class="loja-carrinho-quantidade">
+                                        <button id="diminui"><i class="bi bi-dash-lg"></i></button>
+                                        <input type="text" id="quantidade" value="0">
+                                        <button id="aumentar"><i class="bi bi-plus-lg"></i></button> 
+                                    </div> 
+                                </td>
                                 <td>25</td>
                             </tr>
                             <tr>
-                                <td>Maria</td>
-                                <td>30</td>
-                                <td>30</td>
+                                <td>
+                                    <div class="loja-carrinho-produto">
+                                        <img src="/img/Caderno (1).jpg" title="">
+                                        <p>Caderno Aquarela</p>
+                                    </div>                                    
+                                </td>
+                                <td>
+                                    <div class="loja-carrinho-quantidade">
+                                        <button id="diminui"><i class="bi bi-dash-lg"></i></button>
+                                        <input type="text" id="quantidade" value="0">
+                                        <button id="aumentar"><i class="bi bi-plus-lg"></i></button> 
+                                    </div> 
+                                </td>
+                                <td>25</td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th scope="row" colspan="2">
+                                <th scope="row" colspan="3">
                                     <a href="#" title="">Continuar Comprando</a>
                                     <a href="#" title="">Cancelar</a>
                                 </th>
@@ -89,11 +111,39 @@
 
                 <div class="loja-carrinho-menulateral-conteudo">                    
                     <h4>Resumo da Compra</h4>
+                    <div class="loja-carrinho-menulateral-resumo">
+                        <ul>
+                            <li>
+                                <div>Desconto</div>
+                                <span>1</span>
+                            </li>
+                            <li>
+                                <div>Entrega</div>
+                                <span>1</span>
+                            </li>
+                            <li>
+                                <div>Taxa</div>
+                                <span>1</span>
+                            </li>
+                            <li>
+                                <div>Total</div>
+                                <span>1</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="loja-carrinho-menulateral-conteudo">                    
                     <h4>Métodos de Pagamento</h4>
-                    <button id="pagar">Pagar</button>
+                    <div class="loja-carrinho-pagamentos">                         
+                        <div class="loja-carrinho-pagamentos-metodos">                       
+                            <button id="credito"><i class="bi bi-credit-card-fill"></i></button>
+                            <button id="money"><i class="bi bi-cash"></i></button>
+                            <button id="wallet"><i class="bi bi-wallet-fill"></i></button>
+                            <button id="paypal"><i class="bi bi-paypal"></i></button>
+                        </div>
+                        <button id="pagar">Pagar</button>
+                    </div>
                 </div>
             </div>
                     
