@@ -3,7 +3,7 @@
     --cor-rosa: #ae0464;
     --cor-azul: #1d52a8;
     --cor-roxo: #71056f;
-    --cor-cinza: #212529; 
+    --cor-cinza: #8a8f94; 
     --cor-cinza-claro: #c5c5c5; 
     --cor-cinza-escuro:#212529;
     --cor-violeta: #8a2be2;
@@ -298,14 +298,14 @@ nav ul li {
 .loja-novidades-produto h3 {
     margin: .5em 0;
 }
-.loja-novidades-comprar{
+.loja-novidades-comprar {
     background-color: var(--cor-violeta);
     border-radius: 30px;
     padding: .5em;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-.loja-novidades-comprar{
+.loja-novidades-comprar {
     display: none;
 }
 .loja-novidades-produto:hover .loja-novidades-comprar {
@@ -482,12 +482,13 @@ nav ul li {
 .loja-carrinho-pagamentos button {
     width: 100%;
 }
-.loja-carrinho-quantidade button {
+.loja-produto-quantidade button, 
+.loja-carrinho-quantidade button,
+..loja-produto-cep button {
     background-color: var(--cor-violeta);
     color: var(--cor-branco);
     border: none;
     padding: 6px 10px;
-    margin: 0 5px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
@@ -496,7 +497,9 @@ nav ul li {
 .loja-carrinho-quantidade button:hover {
     background-color: var(--cor-preto);
 }
-.loja-carrinho-quantidade input[type="text"] {
+.loja-produto-quantidade input[type="text"],
+.loja-carrinho-quantidade input[type="text"],
+.loja-produto-cep input[type="text"] {
     width: 40px;
     text-align: center;
     border: 1px solid var(--cor-branco);
@@ -608,6 +611,7 @@ nav ul li {
     flex-direction: column;
     margin: auto 20px;
     justify-content: start;
+    gap: .3em;
 }
 .loja-produto-detalhes h2 {
     text-align: left;
@@ -618,9 +622,43 @@ nav ul li {
     font-size: .9em;
     color: var(--cor-preto);
 }
+.loja-produto-especificacao,
 .loja-produto-detalhes span, p, label {
     font-size: .6em;
 }
+.loja-produto-componentes {
+    display:contents;
+    flex-direction: column;
+    padding: 0 1em;
+}
+.loja-produto-componentes select {
+    width: 220px;
+    font-size: .6em;
+    color: var(--cor-cinza-escuro);
+    padding: .2em;
+}
+.loja-produto-componentes a {
+    background-color: var(--cor-preto);
+    border-radius: 30px;
+    padding: .5em;
+    font-size: .7em;
+    text-align: center;
+    width: 220px;
+}
+.loja-produto-quantidade,
+.loja-produto-cep {
+    display: flex;
+    justify-content: start;
+    font-size: .7em;
+}
+.loja-produto-quantidade input,
+.loja-produto-cep input {
+    font-size: .7em;
+    color: var(--cor-cinza-escuro);
+    margin-right: .4em;
+    padding: .2em;
+}
+
 /* sobre*/
 .sobre-conteudo,
 .contato-conteudo {
