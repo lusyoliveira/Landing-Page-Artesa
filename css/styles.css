@@ -484,7 +484,7 @@ nav ul li {
 }
 .loja-produto-quantidade button, 
 .loja-carrinho-quantidade button,
-..loja-produto-cep button {
+.loja-produto-cep button {
     background-color: var(--cor-violeta);
     color: var(--cor-branco);
     border: none;
@@ -856,10 +856,11 @@ nav ul li {
     display: flex;
     flex-direction: column;
     background-color: var(--cor-cinza-claro);
+    width: 200px
 }
 .blog-destaque-conteudo-item img {
     height: 316px;
-    width: 480px;
+    width: auto;
     transition: 1s;
     margin: 1em;
     object-fit: cover;
@@ -870,7 +871,7 @@ nav ul li {
 .blog-destaque-detalhes {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: .6em;
     margin: 1em;
 }
 .blog-destaque-detalhes h5 {
