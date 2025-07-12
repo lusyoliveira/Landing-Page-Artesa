@@ -42,14 +42,15 @@ button, input, optgroup, select, textarea {
 button {
     background-color: var(--cor-violeta);
     color: var(--cor-branco);
-    border-radius: var(--borda-padrao);
-    padding: 10px;
+    border-radius: 5px;
+    padding: 6px 10px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 0.9rem;
 }
 button:hover {
-    background-color: var(--cor-preto);
+  background-color: var(--cor-preto);
 }
 input, textarea {
     border: 1px solid var(--cor-cinza);
@@ -64,12 +65,12 @@ ul {
     list-style: none;
 }
 a {
-    color: var(--cor-branco);
     text-decoration: none;
 }
 a:visited {
     color: var(--cor-violeta);
 }
+a,
 a:hover {
     color: var(--cor-branco);
 }
@@ -118,7 +119,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--cor-cinza-escuro);
     padding: 15px;
     color: var(--cor-branco);
     position: fixed;
@@ -225,7 +225,6 @@ nav ul li {
 }
 /* Loja */
 .loja-categoria-conteudo {
-    background-color: var(--cor-cinza-escuro);
     padding: 2em;
 }
 .loja-categoria-conteudo a {
@@ -250,28 +249,28 @@ nav ul li {
 .loja-novidades-conteudo img:hover {
     width: 260px;
 }
-.loja-novidades-produto {
+.loja-novidades-produto-detalhes {
     gap: .3em;
     align-items: center;
     text-align: center;
     position: relative;
 }
-.loja-novidades-produto h3 {
+.loja-novidades-produto-detalhes h3 {
     margin: .5em 0;
 }
 .loja-novidades-comprar {
     background-color: var(--cor-violeta);
+    color: var(--cor-branco);
     border-radius: 30px;
     padding: .5em;
     opacity: 0;
     transition: opacity 0.3s ease;
-}
-.loja-novidades-comprar {
     display: none;
 }
-.loja-novidades-produto:hover .loja-novidades-comprar {
+.loja-novidades-produto-detalhes:hover .loja-novidades-comprar {
     display: inline-block;
     opacity: 1;
+    color: var(--cor-branco);
 }
 .loja-novidades-produto-conteudo {
     gap: 3em;
@@ -286,6 +285,7 @@ nav ul li {
 }
 .loja-novidades-favorito {
     background-color: var(--cor-violeta);
+    color: var(--cor-branco);
     border-radius: 5px;
     padding: .5em;
     position: absolute;
@@ -355,7 +355,6 @@ nav ul li {
 }
 .loja-pagamentos-conteudo {
     padding: 50px 0;
-    background-color: var(--cor-cinza-escuro);
 }
 .loja-pagamentos-item {
     gap: .5em;
@@ -431,21 +430,7 @@ nav ul li {
 .loja-carrinho-pagamentos button {
     width: 100%;
 }
-.loja-produto-quantidade button, 
-.loja-carrinho-quantidade button,
-.loja-produto-cep button {
-    background-color: var(--cor-violeta);
-    color: var(--cor-branco);
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s;
-}
-.loja-carrinho-quantidade button:hover {
-    background-color: var(--cor-preto);
-}
+
 .loja-produto-quantidade input[type="text"],
 .loja-carrinho-quantidade input[type="text"],
 .loja-produto-cep input[type="text"] {
@@ -459,8 +444,6 @@ nav ul li {
 .loja-carrinho-conteudo-item img {
     width:64px;
     height:64px;
-    border-radius:6px;
-    object-fit: cover;
 }
 .loja-carrinho-conteudo-item tfoot {
     background-color: transparent;
@@ -553,8 +536,6 @@ nav ul li {
     margin: auto 20%;
     width:150px;
     height:150px;
-    border-radius:6px;
-    object-fit: cover;
 }
 .loja-produto-imagem img {
     width:100%;
@@ -648,7 +629,6 @@ nav ul li {
 }
 /* Testemunho */
 .testemunho {
-    background-color: var(--cor-cinza-escuro);
     box-sizing: border-box;
     width: 100%;
     padding: 20px;
@@ -670,8 +650,6 @@ nav ul li {
 .testemunho-pessoa img {
     width: 80px;
     height: 80px;
-    border-radius: 100px;
-    object-fit: cover;
 }
 .testemunho-pessoa h4  {
     font-size: .6em;
@@ -821,7 +799,6 @@ nav ul li {
     font-size: 1em;
 }
 .blog-principal-destaque-conteudo {
-    background-color: var(--cor-cinza-escuro);
     margin: auto 20%;
     border-radius: 10px;
     padding: 30px;
@@ -942,8 +919,6 @@ nav ul li {
 .blog-principal-recentes-item img {
     width:64px;
     height:64px;
-    border-radius:6px;
-    object-fit: cover;
 }
 .loja-carrinho-menulateral-resumo li,
 .blog-principal-categoria-conteudo li {
@@ -1079,7 +1054,6 @@ nav ul li {
     text-align: center !important;
     --bs-text-opacity: 1;
     color: var(--cor-cinza-claro) !important;
-    background-color: var(--cor-cinza-escuro) !important;
     font-family: var(--fonte);
 }
 .footer-conteudo {
@@ -1147,8 +1121,6 @@ nav ul li {
     overflow:hidden;
     z-index:1;
     margin:0 13px 0 0;
-    border-radius:6px;
-    object-fit: cover;
 }
 .footer-direitos {
     font-size: 1em;
@@ -1157,7 +1129,6 @@ nav ul li {
 .banner-conteudo,
 .loja-novidades-conteudo,
 .loja-produto-categoria-destaque,
-.loja-carrinho-quantidade,
 .loja-carrinho-produto,
 .loja-carrinho-pagamentos {  
     display: flex;
@@ -1228,6 +1199,7 @@ nav ul,
 .blog-principal,
 .loja-carrinho-principal,
 .loja-catalogo-principal,
+.loja-carrinho-quantidade,
 .newsletter-conteudo form {
     display: flex;
     justify-content: center;
@@ -1238,11 +1210,28 @@ nav ul,
     justify-content:center;
     align-items: center;
 }
+.loja-carrinho-conteudo-item img,
+.blog-principal-recentes-item img,
+.footer-conteudo-item-destaque img,
+.testemunho-pessoa img,
+.loja-produto-miniatura img {
+    object-fit: cover;
+    border-radius: 6px;
+}
+nav,
+.loja-categoria-conteudo,
+.loja-pagamentos-conteudo,
+.blog-principal-destaque-conteudo,
+.footer,
+.testemunho {
+    background-color: var(--cor-cinza-escuro);
+}
 .loja-produto-detalhes {
     display: flex;
     flex-direction: column;
     justify-content: start;
 }
+
 /* Tablets e celulares */
 @media (max-width: 600px) {
 

@@ -6,7 +6,7 @@
     <title>Loja</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="js/loja.js" defer></script>
+    <script src="/js/loja.js" defer></script>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -23,7 +23,7 @@
             <form role="search">
                 <input type="search" title="pesquisar" placeholder="Buscar..." aria-label="Search">
             </form>
-            <ul>
+            <ul id="menu-loja">
                 <li><a href="#" alt="Conta"><i class="bi bi-person-circle"></i></a></li>
                 <li><a href="#" alt="Carrinho"><i class="bi bi-cart"></i></a></li>
             </ul>
@@ -60,7 +60,7 @@
             <div class="loja-novidades-conteudo">
                 <h2>Novidades</h2>
                 <div class="loja-novidades-produto-conteudo">
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/Diario.JPG">                      
                             <h3>Diário de Gratidão</h3>
@@ -72,7 +72,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/Caderno(3).JPG">                      
                             <h3>Caderno Aquarela</h3>
@@ -84,7 +84,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/Agenda.jpg">                      
                             <h3>Agenda 2025</h3>
@@ -96,7 +96,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/Caderno(2).jpg">                      
                             <h3>Caderno Preto</h3>
@@ -154,7 +154,7 @@
             <div class="loja-novidades-conteudo">
                 <h2>Cadernos</h2>
                 <div class="loja-novidades-produto-conteudo">
-                        <div class="loja-novidades-produto"> 
+                        <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/Caderno(3).jpg">                      
                             <h3>Caderno Aquarela</h3>
@@ -166,7 +166,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO88UMTTiGTMs6IbtE-fxQXXCBigW7RAjqr4UYNBJ5zD9JQkfRMlKIxn9grQWZs1GcMvYksNeXIjRAQMIgDcwNafiEHDNYUnP4w9iY2wTzJwftjBiYAurllyen-7CS8MJG1KMEdorGEHl1L3Qd2OtWtPxL5KIDLiDN3zGVaLxWOM_3iNE/s1600/Caderno%20Quadrado%20(5).jpg">                      
                             <h3>Caderno Quadrado</h3>
@@ -178,7 +178,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWoWtAflcu38hvPjtgYsrsch8XLkdBEmXKHVzFIALE55vsEDBor_NRyVDLuYqPSZevy72ECyzMPqFewA_VCW3w8aIj3FRWzUAm_DVGGuNxd1ID2g2AgWO7GsaKbMgMMb-c0zU_k0Gf3dnbdvD4NWdoj-8o_WmQKC29GgIVAqHGcJrGcHM/s1600/Caderno%20Brochura%20Spring%20Energy%20Xadrez%20(1).jpg">                      
                             <h3>Caderno Xadrez</h3>
@@ -190,7 +190,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/Caderno(2).jpg">                      
                             <h3>Caderno Preto</h3>
@@ -222,7 +222,7 @@
             <div class="loja-novidades-conteudo">
                 <h2>Papelaria</h2>
                 <div class="loja-novidades-produto-conteudo">
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/ReguaMarcador.JPG">                      
                             <h3>Régua Marcador</h3>
@@ -234,7 +234,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                     <div class="loja-novidades-produto"> 
+                     <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/WashiTapeNebula.JPG">                      
                             <h3>Washi Tape Nebula</h3>
@@ -246,7 +246,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/WashiTapeGaláxia .JPG">                      
                             <h3>Washi Tape Galáxia</h3>
@@ -258,7 +258,7 @@
                         </a>  
                         <a class="loja-novidades-favorito" href="#"><i class="bi bi-heart-fill"></i></a>
                     </div>
-                    <div class="loja-novidades-produto"> 
+                    <div class="loja-novidades-produto-detalhes"> 
                         <a href="#">
                             <img src="img/Caderno(2).jpg">                      
                             <h3>Caneta Gel Estrela da Noite</h3>
