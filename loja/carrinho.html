@@ -32,9 +32,9 @@
         <section class="carrossel-container">
                     <div class="carrossel-column">
                         <div class="carrossel" id="imagecarrossel">
-                            <img src="img/Banner (1).jpg" alt="Imagem 1" class="active">
-                            <img src="img/Banner (2).jpg" alt="Imagem 2">
-                            <img src="img/Banner (3).jpg" alt="Imagem 3">
+                            <img src="/img/Banner (1).jpg" alt="Imagem 1" class="active">
+                            <img src="/img/Banner (2).jpg" alt="Imagem 2">
+                            <img src="/img/Banner (3).jpg" alt="Imagem 3">
                         </div>
                         <div class="carrossel-controls">
                             <button id="prevBtn"><i class="bi bi-caret-left-fill"></i></button>
@@ -58,39 +58,8 @@
                                 <th>Valor</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="loja-carrinho-produto">
-                                        <img src="/img/Caderno(3).jpg" title="">
-                                        <p>Caderno Aquarela</p>
-                                    </div>                                    
-                                </td>
-                                <td>
-                                    <div class="loja-carrinho-quantidade">
-                                        <button id="diminui"><i class="bi bi-dash-lg"></i></button>
-                                        <input type="text" id="quantidade" value="1">
-                                        <button id="aumentar"><i class="bi bi-plus-lg"></i></button> 
-                                    </div> 
-                                </td>
-                                <td>28,98</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="loja-carrinho-produto">
-                                        <img src="/img/Caderno(4).jpg" title="">
-                                        <p>Caderno Isométrico</p>
-                                    </div>                                    
-                                </td>
-                                <td>
-                                    <div class="loja-carrinho-quantidade">
-                                        <button id="diminui"><i class="bi bi-dash-lg"></i></button>
-                                        <input type="text" id="quantidade" value="1">
-                                        <button id="aumentar"><i class="bi bi-plus-lg"></i></button> 
-                                    </div> 
-                                </td>
-                                <td>28,98</td>
-                            </tr>
+                        <tbody id="carrinho">
+                            
                         </tbody>
                         <tfoot>
                             <tr>
@@ -105,21 +74,21 @@
             </div>  
             <div class="loja-carrinho-menulateral">
                 <div class="loja-carrinho-menulateral-conteudo">                    
-                    <h4>Cupom</h4>
+                    <h3>Cupom</h3>
                     <input id="cupom" placeholder="Informe o código do cupom" >
                     <button id="aplicar">Aplicar</button>
                     <p>PRIMEIRACOMPRA</p>
                 </div>
 
                 <div class="loja-carrinho-menulateral-conteudo">                    
-                    <h4>Entrega</h4>
+                    <h3>Entrega</h3>
                     <input id="cep" placeholder="Informe um CEP..." >
                     <button id="busca-cep">Buscar</button>
                     <p>Avenida Rio Branco, 100 - Juiz de Fora/MG</p>
                 </div>
 
                 <div class="loja-carrinho-menulateral-conteudo">                    
-                    <h4>Resumo da Compra</h4>
+                    <h3>Resumo da Compra</h3>
                     <div class="loja-carrinho-menulateral-resumo">
                         <ul>
                             <li>
@@ -143,7 +112,7 @@
                 </div>
 
                 <div class="loja-carrinho-menulateral-conteudo">                    
-                    <h4>Métodos de Pagamento</h4>
+                    <h3>Pagamentos</h3>
                     <div class="loja-carrinho-pagamentos">                         
                         <div class="loja-carrinho-pagamentos-metodos">                       
                             <button id="credito"><i class="bi bi-credit-card-fill"></i></button>

@@ -56,6 +56,7 @@ input, textarea {
     border: 1px solid var(--cor-cinza);
     border-radius: var(--borda-padrao);
     padding: var(--espacamento-padrao);
+    margin: .5em 0;
     display: block;
 }
 input:focus, textarea:focus {
@@ -67,10 +68,8 @@ ul {
 a {
     text-decoration: none;
 }
-a:visited {
-    color: var(--cor-violeta);
-}
 a,
+a:visited,
 a:hover {
     color: var(--cor-branco);
 }
@@ -81,17 +80,26 @@ h1,h2, h3, h4 {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-h2 {
-    text-align: center;
-    font-size: 2.25rem;
-    margin: 0.5em auto;
-    color: var(--cor-branco);
-    }
 h1 {
     color: var(--cor-violeta);
     font-size: 3.5rem; 
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    margin: 0.5em auto;
+    color: var(--cor-branco);
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1em;
+}
+h5 {
+    font-size: .8em;
 }
 .clearfix {
   clear: both;
@@ -390,7 +398,6 @@ nav ul li {
     text-align: left;
     margin-bottom: 20px;
     color: var(--cor-branco);
-    font-size: 1.2rem;
     text-transform: uppercase;
 }
 .loja-carrinho-conteudo-item table {
@@ -415,22 +422,24 @@ nav ul li {
 }
 .loja-carrinho-pagamentos-metodos,
 .loja-carrinho-quantidade,
-.loja-carrinho-produto,
 .testemunho-item, 
 .testemunho-descricao {
     gap: 0.3125em; 
 }
-.loja-carrinho-produto {    
+.loja-carrinho-produto {      
+    display: flex;
+    align-items: center;
     justify-content: start;
+    font-size: 2em;
 }
 .loja-carrinho-pagamentos,
+.loja-carrinho-produto,
 .testemunho-pessoa {
     gap: 0.625em; 
 }
 .loja-carrinho-pagamentos button {
     width: 100%;
 }
-
 .loja-produto-quantidade input[type="text"],
 .loja-carrinho-quantidade input[type="text"],
 .loja-produto-cep input[type="text"] {
@@ -439,7 +448,6 @@ nav ul li {
     border: 1px solid var(--cor-branco);
     border-radius: 5px;
     padding: 5px;
-    margin: 0 5px;
 }
 .loja-carrinho-conteudo-item img {
     width:64px;
@@ -486,9 +494,6 @@ nav ul li {
 .loja-catalogo-produtos {
     color: var(--cor-violeta);
     padding: 0 .8em;
-}
-.loja-catalogo-produtos h3 {
-    font-size: .7em;
 }
 .loja-catalogo-produtos p, 
 .loja-catalogo-produtos span {
@@ -592,7 +597,6 @@ nav ul li {
 .loja-produto-cep input {
     font-size: .7em;
     color: var(--cor-cinza-escuro);
-    margin-right: .4em;
     padding: .2em;
 }
 /* sobre*/
@@ -785,7 +789,6 @@ nav ul li {
     letter-spacing: 1px;
     text-align: left;
     text-transform: uppercase;
-    font-size: 1.5em;
 }
 .blog-destaque-detalhes a {
     color: var(--cor-violeta);  
@@ -848,9 +851,6 @@ nav ul li {
     padding: 1.5em;
     gap:1em
 }
-.blog-principal-conteudo-detalhes h3 { 
-    font-size: 2em;
-}
 .blog-principal-conteudo-detalhes p { 
     font-size: 1.5em;
 }
@@ -874,7 +874,6 @@ nav ul li {
 .loja-carrinho-menulateral-conteudo h4,
 .blog-principal-menulateral-sobre h4 {
     margin-bottom: 5px;
-    font-size: 1.6em;
     text-transform: uppercase;
 }
 .blog-principal-menulateral-recentes, 
@@ -961,7 +960,6 @@ nav ul li {
 }
 .blog-postagem-descricao h3 {
     color: var(--cor-branco);
-    font-size: 1.5em;
     margin: 1em 0;
 }
 .blog-postagem-descricao iframe {
@@ -1002,7 +1000,6 @@ nav ul li {
     text-align: left;
 }
 .blog-postagem-destaque h3 {
-    font-size: 1.5em;
     color: var(--cor-cinza-claro);
     text-align: left;
     margin-bottom: 10px;
@@ -1021,7 +1018,6 @@ nav ul li {
     border-bottom: 1px solid var(--cor-branco);
 }
 .blog-postagem-comentarios-cabecalho h3 {
-    font-size: 1.5em;
     color: var(--cor-cinza-claro);
 }
 .blog-postagem-comentarios {
@@ -1129,7 +1125,6 @@ nav ul li {
 .banner-conteudo,
 .loja-novidades-conteudo,
 .loja-produto-categoria-destaque,
-.loja-carrinho-produto,
 .loja-carrinho-pagamentos {  
     display: flex;
     flex-direction: column;
@@ -1177,6 +1172,7 @@ nav ul li {
 .blog-postagem-destaque,
 .testemunho-item, 
 .testemunho-descricao,
+.loja-carrinho-menulateral-conteudo,
 .contato-conteudo-item form  {
     display: flex;
     flex-direction: column;
