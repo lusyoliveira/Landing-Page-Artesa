@@ -76,15 +76,15 @@
                 <div class="loja-carrinho-menulateral-conteudo">                    
                     <h3>Cupom</h3>
                     <input id="cupom" placeholder="Informe o código do cupom" >
-                    <button id="aplicar">Aplicar</button>
-                    <p>PRIMEIRACOMPRA</p>
+                    <button type="button" id="aplicar">Aplicar</button>
+                    <p></p>
                 </div>
 
                 <div class="loja-carrinho-menulateral-conteudo">                    
                     <h3>Entrega</h3>
                     <input id="cep" placeholder="Informe um CEP..." >
-                    <button id="busca-cep">Buscar</button>
-                    <p>Avenida Rio Branco, 100 - Juiz de Fora/MG</p>
+                    <button type="button" id="busca-cep">Buscar</button>
+                    <p></p>
                 </div>
 
                 <div class="loja-carrinho-menulateral-conteudo">                    
@@ -92,20 +92,20 @@
                     <div class="loja-carrinho-menulateral-resumo">
                         <ul>
                             <li>
+                                <div>Total dos Produtos</div>
+                                <span id="total-produtos">0.00</span>
+                            </li>
+                            <li>
                                 <div>Desconto</div>
-                                <span>R$ 3,39</span>
+                                <span id="desconto">0.00</span>
                             </li>
                             <li>
-                                <div>Entrega</div>
-                                <span>R$ 10,00</span>
-                            </li>
-                            <li>
-                                <div>Taxa</div>
-                                <span>R$ 0,00</span>
+                                <div>Frete</div>
+                                <span id="frete">0.00</span>
                             </li>
                             <li>
                                 <div>Total</div>
-                                <span>R$ 57,96</span>
+                                <span id="total">0.00</span>
                             </li>
                         </ul>
                     </div>
@@ -115,12 +115,12 @@
                     <h3>Pagamentos</h3>
                     <div class="loja-carrinho-pagamentos">                         
                         <div class="loja-carrinho-pagamentos-metodos">                       
-                            <button id="credito"><i class="bi bi-credit-card-fill"></i></button>
-                            <button id="money"><i class="bi bi-cash"></i></button>
-                            <button id="wallet"><i class="bi bi-wallet-fill"></i></button>
-                            <button id="paypal"><i class="bi bi-paypal"></i></button>
+                            <button type="button" title="Credito" id="credito"><i class="bi bi-credit-card-fill"></i></button>
+                            <button type="button" title="Dinheiro" id="dinheiro"><i class="bi bi-cash"></i></button>
+                            <button type="button" title="Wallet" id="wallet"><i class="bi bi-wallet-fill"></i></button>
+                            <button type="button" title="Paypal" id="paypal"><i class="bi bi-paypal"></i></button>
                         </div>
-                        <button id="pagar">Pagar</button>
+                        <button type="sumbit" title="Pagar" id="pagar">Pagar</button>
                     </div>
                 </div>
             </div>
