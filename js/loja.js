@@ -1,11 +1,10 @@
 const imagem = document.querySelectorAll('#imagecarrossel img');
 const btnAnterior = document.getElementById('prevBtn');
 const btnProximo = document.getElementById('nextBtn');
-const menuLoja = document.getElementById('menu-loja');
 const btnComprar = document.querySelectorAll('.loja-novidades-comprar');
+const btncupom = document.getElementById('btn-cupom');
+const menuLoja = document.getElementById('menu-loja');
 const totalProdutos = document.getElementById('total-produtos')
-const desconto = document.getElementById('desconto').textContent
-const frete = document.getElementById('frete').textContent
 const total = document.getElementById('total')
 const carrinhoCompra = JSON.parse(localStorage.getItem('carrinho')) || [];
 
@@ -21,6 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     total.textContent = calculaPedido() 
 }
 });
+
+//Aplica desconto do cupom
+btncupom.addEventListener('click', (evento) => {
+    evento.preventDefault();
+    aplicaCupom();
+})
 
 //Carrossel
 btnAnterior.addEventListener('click', () => {
@@ -157,7 +162,6 @@ function atualizarQuantidade() {
 };
 
 function somarProdutos(listaProdutos) {
-
     let soma = 0;
 
     listaProdutos.forEach(produto => {
@@ -165,9 +169,12 @@ function somarProdutos(listaProdutos) {
     });
 
     return soma.toFixed(2);
-}
+};
 
 function calculaPedido() {
+    const desconto = document.getElementById('desconto').textContent
+    const frete = document.getElementById('frete').textContent
+
     let soma = 0
     let valorProdutos = somarProdutos(carrinhoCompra)
     let freteConvertido = parseFloat(frete)
@@ -175,6 +182,22 @@ function calculaPedido() {
 
     soma = freteConvertido + parseFloat(valorProdutos) - descontoConvertido
 
-    return soma
+    return soma.toFixed(2);
+};
+
+function aplicaCupom() {
+    const cupom = document.querySelectorAll('.loja-carrinho-menulateral-conteudo p');
+    const inputCupom = document.getElementById('cupom').value;
+    const desconto = document.getElementById('desconto')
+    const valorDesconto = parseFloat(5) || 0;
+
+    if (inputCupom === 'PRIMEIRACOMPRA') {
+        cupom.textContent = inputCupom
+        desconto.textContent = valorDesconto.toFixed(2);
+        total.textContent = somarProdutos(carrinhoCompra);
+        calculaPedido();
+    } else {
+        desconto.textContent = '0.00';
+    }
 }
 
