@@ -3,10 +3,14 @@ const btnAnterior = document.getElementById('prevBtn');
 const btnProximo = document.getElementById('nextBtn');
 const btnComprar = document.querySelectorAll('.loja-novidades-comprar');
 const btncupom = document.getElementById('btn-cupom');
+const btnBuscaCep = document.getElementById('btn-busca-cep');
 const menuLoja = document.getElementById('menu-loja');
-const totalProdutos = document.getElementById('total-produtos')
-const total = document.getElementById('total')
+const spanTotalProdutos = document.getElementById('total-produtos')
+const spanTotal = document.getElementById('total')
+const spanDesconto = document.getElementById('desconto')
+const spanFrete = document.getElementById('frete')
 const carrinhoCompra = JSON.parse(localStorage.getItem('carrinho')) || [];
+const pedidoResumo = JSON.parse(localStorage.getItem('pedido')) || [];
 
 let currentIndex = 0;
 
@@ -16,16 +20,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.endsWith('carrinho.html')) {
     carregaProdutos(carrinhoCompra)
 
-    totalProdutos.textContent = somarProdutos(carrinhoCompra)
-    total.textContent = calculaPedido() 
-}
-});
+    // totalProdutos.textContent = somarProdutos(carrinhoCompra)
+    // total.textContent = calculaPedido() 
 
-//Aplica desconto do cupom
-btncupom.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    aplicaCupom();
-})
+    //Aplica desconto do cupom
+    btncupom.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        aplicarCupom();
+    })
+
+    //Aplica frete
+    btnBuscaCep.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        aplicarFrete();
+    })
+    }
+});
 
 //Carrossel
 btnAnterior.addEventListener('click', () => {
@@ -65,7 +75,12 @@ btnComprar.forEach((botao) => {
             imagem: imagemProduto
         }
         carrinhoCompra.push(item)
-        localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra))    
+        localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra))         
+        localStorage.setItem('pedido', JSON.stringify({ frete: 0, 
+                                                        desconto: 0, 
+                                                        totalProdutos: somarProdutos(carrinhoCompra), 
+                                                        total: somarProdutos(carrinhoCompra) 
+                                                    }))      
     })
 });
 
@@ -129,8 +144,9 @@ function carregaProdutos(listaProdutos) {
         tr.appendChild(tdValor)
 
         linhaTabela.appendChild(tr)
-    });
-    
+
+        calculaPedido()
+    });    
 };
 
 function aumentaQuantidade(elementoInput) {    
@@ -159,6 +175,7 @@ function diminuiQuantidade(elementoInput, produto) {
 
 function atualizarQuantidade() {
     localStorage.setItem('quantidade', novaValor)
+    //fazer multiplicação do valor do produto pela quantidade
 };
 
 function somarProdutos(listaProdutos) {
@@ -172,32 +189,53 @@ function somarProdutos(listaProdutos) {
 };
 
 function calculaPedido() {
-    const desconto = document.getElementById('desconto').textContent
-    const frete = document.getElementById('frete').textContent
-
-    let soma = 0
-    let valorProdutos = somarProdutos(carrinhoCompra)
-    let freteConvertido = parseFloat(frete)
-    let descontoConvertido = parseFloat(desconto)
-
-    soma = freteConvertido + parseFloat(valorProdutos) - descontoConvertido
-
-    return soma.toFixed(2);
+    spanDesconto.textContent = pedidoResumo.desconto
+    spanFrete.textContent = pedidoResumo.frete
+    spanTotal.textContent = pedidoResumo.total
+    spanTotalProdutos.textContent = pedidoResumo.totalProdutos
 };
 
-function aplicaCupom() {
+function aplicarCupom() {
     const cupom = document.querySelectorAll('.loja-carrinho-menulateral-conteudo p');
     const inputCupom = document.getElementById('cupom').value;
     const desconto = document.getElementById('desconto')
     const valorDesconto = parseFloat(5) || 0;
 
+    let valorFrete = pedidoResumo.frete
+    let valorTotalProdutos = pedidoResumo.totalProdutos
+
     if (inputCupom === 'PRIMEIRACOMPRA') {
-        cupom.textContent = inputCupom
+        cupom.textContent = 'desconto aplicado';
         desconto.textContent = valorDesconto.toFixed(2);
-        total.textContent = somarProdutos(carrinhoCompra);
-        calculaPedido();
+        localStorage.setItem('pedido', JSON.stringify({ frete: valorFrete, 
+                                                        desconto: valorDesconto.toFixed(2),
+                                                        totalProdutos: valorTotalProdutos,
+                                                        total: (valorTotalProdutos - valorDesconto + valorFrete).toFixed(2) 
+                                                    }));
+        inputCupom.value = ''  
     } else {
         desconto.textContent = '0.00';
     }
+};
+
+function aplicarFrete() {
+    const frete = document.getElementById('frete')
+    const inputFrete = document.getElementById('cep').value;
+    const valorFrete = parseFloat(10) || 0;
+
+    let valorDesconto = pedidoResumo.desconto
+    let valorTotalProdutos = pedidoResumo.totalProdutos
+
+    if (inputFrete.length === 8) {
+        frete.textContent = valorFrete.toFixed(2);
+        localStorage.setItem('pedido', JSON.stringify({ frete: valorFrete.toFixed(2), 
+                                                        desconto: valorDesconto,
+                                                        totalProdutos: valorTotalProdutos,
+                                                        total: (valorTotalProdutos - valorDesconto + valorFrete).toFixed(2) 
+                                                    }));
+        inputFrete.value = ''                                     
+    } else {
+        frete.textContent = '0.00';
+    }    
 }
 
