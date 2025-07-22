@@ -18,22 +18,22 @@ menuLoja.style.display = 'flex';
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.endsWith('carrinho.html')) {
-    carregaProdutos(carrinhoCompra)
+        carregaProdutos(carrinhoCompra)
 
-    // totalProdutos.textContent = somarProdutos(carrinhoCompra)
-    // total.textContent = calculaPedido() 
+        // totalProdutos.textContent = somarProdutos(carrinhoCompra)
+        // total.textContent = calculaPedido() 
 
-    //Aplica desconto do cupom
-    btncupom.addEventListener('click', (evento) => {
-        evento.preventDefault();
-        aplicarCupom();
-    })
+        //Aplica desconto do cupom
+        btncupom.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            aplicarCupom();
+        })
 
-    //Aplica frete
-    btnBuscaCep.addEventListener('click', (evento) => {
-        evento.preventDefault();
-        aplicarFrete();
-    })
+        //Aplica frete
+        btnBuscaCep.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            aplicarFrete();
+        })
     }
 });
 
@@ -112,14 +112,26 @@ function carregaProdutos(listaProdutos) {
 
         const btnAumentar = document.createElement('button')   
         btnAumentar.setAttribute ('title', 'Aumentar Quantidade')
-        btnAumentar.onclick = () => aumentaQuantidade(inputQuantidade)
+        btnAumentar.onclick = () => {
+            let valorcontador = parseInt(inputQuantidade.value) || 0; 
+            
+            valorcontador += 1;
+            inputQuantidade.value = valorcontador;
+        }
 
         const iconeAumentar = document.createElement('i')
         iconeAumentar.classList.add('bi','bi-plus-lg')
 
         const btnDiminuir = document.createElement('button')   
         btnDiminuir.setAttribute ('title', 'Diminuir Quantidade')   
-        btnDiminuir.onclick  = () => diminuiQuantidade(inputQuantidade,produto.descricao)
+        btnDiminuir.onclick  = () => {
+            let valorcontador = parseInt(inputQuantidade.value) || 0;
+
+            if (valorcontador > 0) {
+                valorcontador -= 1;
+                inputQuantidade.value = valorcontador;
+            }
+        }
 
         const iconeDiminuir = document.createElement('i')
         iconeDiminuir.classList.add('bi', 'bi-dash-lg')
@@ -147,35 +159,6 @@ function carregaProdutos(listaProdutos) {
 
         calculaPedido()
     });    
-};
-
-function aumentaQuantidade(elementoInput) {    
-    let valorcontador = parseInt(elementoInput.value) || 0; 
-    
-    valorcontador += 1;
-    inputContador.value = valorcontador;
-    atualizarQuantidade()
-    carregaProdutos()
-};
-
-function diminuiQuantidade(elementoInput, produto) {
-    let valorcontador = parseInt(elementoInput.value) || 0;
-    
-   if (valorcontador > 0) {
-        valorcontador -= 1;
-        inputContador.value = valorcontador;
-        atualizarQuantidade()
-        carregaProdutos()
-    } else if (valorcontador = 0) {
-        carrinhoCompra.removeItem(produto)
-        atualizarQuantidade()
-        carregaProdutos()
-    }
-};
-
-function atualizarQuantidade() {
-    localStorage.setItem('quantidade', novaValor)
-    //fazer multiplicação do valor do produto pela quantidade
 };
 
 function somarProdutos(listaProdutos) {
@@ -220,22 +203,21 @@ function aplicarCupom() {
 
 function aplicarFrete() {
     const frete = document.getElementById('frete')
-    const inputFrete = document.getElementById('cep').value;
-    const valorFrete = parseFloat(10) || 0;
+    const inputCEP = document.getElementById('cep').value;
+    const valorFrete = parseFloat(10).toFixed(2) || 0;
 
     let valorDesconto = pedidoResumo.desconto
     let valorTotalProdutos = pedidoResumo.totalProdutos
 
-    if (inputFrete.length === 8) {
-        frete.textContent = valorFrete.toFixed(2);
-        localStorage.setItem('pedido', JSON.stringify({ frete: valorFrete.toFixed(2), 
+    if (inputCEP.length === 8) {
+        frete.textContent = valorFrete;
+        localStorage.setItem('pedido', JSON.stringify({ frete: valorFrete, 
                                                         desconto: valorDesconto,
                                                         totalProdutos: valorTotalProdutos,
                                                         total: (valorTotalProdutos - valorDesconto + valorFrete).toFixed(2) 
                                                     }));
-        inputFrete.value = ''                                     
+        inputCEP.value = ''                                     
     } else {
         frete.textContent = '0.00';
     }    
 }
-

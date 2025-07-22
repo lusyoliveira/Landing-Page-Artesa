@@ -296,15 +296,15 @@ nav ul li {
 }
 .loja-produto-categoria {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 600px 600px;
     grid-gap: 50px;
     background-color: transparent;
     padding: 10px;
-    margin: auto 20em;    
+    margin: auto 2em;    
 }
 .loja-produto-categoria > div {
     background-color: transparent;
-    text-align: left;
+    text-align:end;
     padding: 20px;
     font-size: 30px;
     border-radius: 30px;
@@ -313,7 +313,7 @@ nav ul li {
 .loja-produto-categoria-destaque-conteudo {
     background-color: transparent;
     padding: 10px;
-    margin: auto 20em; 
+    margin: auto 10em; 
 }
 .loja-produto-categoria-destaque {
     gap:.6em;
@@ -321,7 +321,7 @@ nav ul li {
     padding: 20px;
     font-size: 30px;
     border-radius: 30px;
-    height: 500px;
+    height: 400px;
     background: var(--destaque-categoria);
     background-size: cover;
     background-position: center;
@@ -437,6 +437,10 @@ nav ul li {
 .loja-carrinho-pagamentos button {
     width: 100%;
 }
+.loja-carrinho-pagamentos-metodos button {
+    width: 50px;
+    height: 50px;
+}
 .loja-carrinho-quantidade input,
 .loja-carrinho-quantidade button {
     width: 40px;
@@ -474,25 +478,23 @@ nav ul li {
     background-color:  var(--cor-preto);
 }
 .loja-catalogo-conteudo h2 {
-    text-align: left;
+    text-align: start;
 }
 .loja-catalogo-carrossel {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto;
-    grid-gap: 30px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows:repeat(4, 450px);
+    grid-gap: 20px;
     background-color: transparent;
-    padding: 10px;
 }
 .loja-catalogo-carrossel > div {
     background-color: var(--cor-cinza-claro);
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
 }
 .loja-catalogo-carrossel img {
     object-fit: contain;
-    width: 150px;
+    width: 100%;
+    padding: .5em;
 }
 .loja-catalogo-produtos {
     color: var(--cor-violeta);
@@ -500,7 +502,8 @@ nav ul li {
 }
 .loja-catalogo-produtos p, 
 .loja-catalogo-produtos span {
-    font-size: .5em;
+    font-size: .9em;
+    font-weight: 700;
 }
 .loja-catalogo-menulateral-conteudo ul {
     margin-top: 10px;
@@ -514,6 +517,7 @@ nav ul li {
 .loja-catalogo-menulateral-conteudo button {
     margin: 10px 0;
     width: 100%;
+    height: 3em;
     border-radius: 20px;
 }
 .loja-catalogo-menulateral-faixa {
@@ -521,7 +525,7 @@ nav ul li {
     margin: 10px 0;
 }
 .loja-catalogo-menulateral-faixa input {
-    width: 50%;
+    width: 100%;
 }
 .loja-produto-conteudo {
     display: grid;
@@ -655,8 +659,10 @@ nav ul li {
     flex: 1;
 }
 .testemunho-pessoa img {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 70px;
 }
 .testemunho-pessoa h4  {
     font-size: .6em;
@@ -705,6 +711,7 @@ nav ul li {
     align-items: center;
     flex-direction:column;
     gap: 0.3125em;
+    text-align: center;
 }
 .produtos-conteudo-item h3 {
     line-height: 18px;
@@ -830,7 +837,8 @@ nav ul li {
     gap: 1.875em;
 }
 .blog-principal-conteudo,
-.loja-carrinho-conteudo {
+.loja-carrinho-conteudo,
+.loja-catalogo-conteudo {
     gap: 1.25em;
     width: 70%;   
     color: var(--cor-violeta);
@@ -847,15 +855,18 @@ nav ul li {
 }
 .blog-principal-imagem img {
     height: 320px;
-    width: 100%;
     object-fit: cover;
 }
 .blog-principal-conteudo-detalhes {
     padding: 1.5em;
-    gap:1em
+    gap:1em;
+    color: var(--cor-violeta); 
+}
+.blog-principal-conteudo-detalhes a {
+    color: var(--cor-violeta); 
 }
 .blog-principal-conteudo-detalhes p { 
-    font-size: 1.5em;
+    font-size: 1em;
 }
 .blog-principal-tags {
     font-size: 1.0em;
@@ -1081,7 +1092,7 @@ nav ul li {
 }
 .footer-conteudo-item li {
     padding-bottom: 5px;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 .footer-conteudo-item p {
     text-align:justify;
@@ -1166,6 +1177,7 @@ nav ul li {
 .blog-destaque-detalhes,
 .blog-principal-conteudo,
 .loja-carrinho-conteudo,
+.loja-catalogo-conteudo,
 .blog-principal-conteudo-detalhes,
 .blog-principal-menulateral-recentes, 
 .blog-principal-menulateral-categoria,
@@ -1185,7 +1197,7 @@ nav ul li {
 .blog-postegem-rodape-tags,
 .blog-postagem-comentarios-usuario {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 nav ul,
 .testemunho-conteudo,
@@ -1212,7 +1224,6 @@ nav ul,
 .loja-carrinho-conteudo-item img,
 .blog-principal-recentes-item img,
 .footer-conteudo-item-destaque img,
-.testemunho-pessoa img,
 .loja-produto-miniatura img {
     object-fit: cover;
     border-radius: 6px;
