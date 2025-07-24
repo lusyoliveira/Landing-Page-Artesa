@@ -16,27 +16,6 @@ let currentIndex = 0;
 
 menuLoja.style.display = 'flex';
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.endsWith('carrinho.html')) {
-        carregaProdutos(carrinhoCompra)
-
-        // totalProdutos.textContent = somarProdutos(carrinhoCompra)
-        // total.textContent = calculaPedido() 
-
-        //Aplica desconto do cupom
-        btncupom.addEventListener('click', (evento) => {
-            evento.preventDefault();
-            aplicarCupom();
-        })
-
-        //Aplica frete
-        btnBuscaCep.addEventListener('click', (evento) => {
-            evento.preventDefault();
-            aplicarFrete();
-        })
-    }
-});
-
 //Carrossel
 btnAnterior.addEventListener('click', () => {
     imagem[currentIndex].classList.remove('active');
@@ -56,6 +35,27 @@ setInterval(() => {
     imagem[currentIndex].classList.add('active');
 }, 5000);
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.endsWith('carrinho.html')) {
+
+        //Aplica desconto do cupom
+        btncupom.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            aplicarCupom();
+            calculaPedido();
+        })
+
+        //Aplica frete
+        btnBuscaCep.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            aplicarFrete();
+            calculaPedido();
+        })        
+        carregaProdutos(carrinhoCompra)
+    }
+});
+
+
 //Adiciona item ao carrinho
 btnComprar.forEach((botao) => {
 
@@ -71,16 +71,19 @@ btnComprar.forEach((botao) => {
         const item = {
             produto: descricao,
             quantidade: 1,
-            valor: preco,
+            valor: preco.replace(',', '.'),
+            valorTotal: preco.replace(',', '.'),
             imagem: imagemProduto
         }
         carrinhoCompra.push(item)
-        localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra))         
-        localStorage.setItem('pedido', JSON.stringify({ frete: 0, 
-                                                        desconto: 0, 
-                                                        totalProdutos: somarProdutos(carrinhoCompra), 
-                                                        total: somarProdutos(carrinhoCompra) 
-                                                    }))      
+        localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra))          
+       
+        localStorage.setItem('pedido', JSON.stringify({    
+            frete: 0, 
+            desconto: 0, 
+            totalProdutos: somarProdutos(carrinhoCompra), 
+            total: somarProdutos(carrinhoCompra) 
+        }))      
     })
 });
 
@@ -90,7 +93,7 @@ function carregaProdutos(listaProdutos) {
 
     linhaTabela.innerHTML = '';      
             
-        listaProdutos.forEach(produto => {
+        listaProdutos.forEach((produto, index) => {
         const tr = document.createElement('tr')
         const tdProduto = document.createElement('td')
         const divProduto = document.createElement('div')
@@ -109,15 +112,31 @@ function carregaProdutos(listaProdutos) {
         const inputQuantidade  = document.createElement('input')
         inputQuantidade.setAttribute ('type', 'text')
         inputQuantidade.setAttribute ('value', produto.quantidade)
+        
+        const tdValor = document.createElement('td')
+        tdValor.textContent = produto.valorTotal
+        tdValor.classList.add('text-center')
 
         const btnAumentar = document.createElement('button')   
         btnAumentar.setAttribute ('title', 'Aumentar Quantidade')
         btnAumentar.onclick = () => {
-            let valorcontador = parseInt(inputQuantidade.value) || 0; 
-            
+            let valorcontador = parseInt(inputQuantidade.value) || 0;
+            const precoProduto = carrinhoCompra[index].valor //.replace(',', '.')
+            let novoValor = 0
+
             valorcontador += 1;
             inputQuantidade.value = valorcontador;
-        }
+
+            novoValor = parseFloat(precoProduto) * parseFloat(valorcontador)
+            carrinhoCompra[index].valorTotal = novoValor;
+            carrinhoCompra[index].quantidade = valorcontador;
+            tdValor.textContent = novoValor;
+            localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
+
+            pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
+            localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
+            calculaPedido()
+        };
 
         const iconeAumentar = document.createElement('i')
         iconeAumentar.classList.add('bi','bi-plus-lg')
@@ -126,19 +145,26 @@ function carregaProdutos(listaProdutos) {
         btnDiminuir.setAttribute ('title', 'Diminuir Quantidade')   
         btnDiminuir.onclick  = () => {
             let valorcontador = parseInt(inputQuantidade.value) || 0;
+            const precoProduto = carrinhoCompra[index].valor //.replace(',', '.')
+            let novoValor = 0
 
             if (valorcontador > 0) {
                 valorcontador -= 1;
                 inputQuantidade.value = valorcontador;
             }
-        }
+            novoValor = parseFloat(precoProduto) * valorcontador
+            carrinhoCompra[index].valorTotal = novoValor
+            carrinhoCompra[index].quantidade = valorcontador;
+            tdValor.textContent = novoValor;
+            localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
+
+            pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
+            localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
+            calculaPedido()
+        };
 
         const iconeDiminuir = document.createElement('i')
         iconeDiminuir.classList.add('bi', 'bi-dash-lg')
-  
-        const tdValor = document.createElement('td')
-        tdValor.textContent = produto.valor
-        tdValor.classList.add('text-center')
 
         divProduto.appendChild(imgProduto)
         divProduto.appendChild(descricaoProduto)
@@ -165,59 +191,55 @@ function somarProdutos(listaProdutos) {
     let soma = 0;
 
     listaProdutos.forEach(produto => {
-        soma += parseFloat(produto.valor.replace(',', '.')) || 0;
+        soma += parseFloat(produto.valorTotal) || 0;
     });
 
     return soma.toFixed(2);
 };
 
 function calculaPedido() {
-    spanDesconto.textContent = pedidoResumo.desconto
-    spanFrete.textContent = pedidoResumo.frete
-    spanTotal.textContent = pedidoResumo.total
-    spanTotalProdutos.textContent = pedidoResumo.totalProdutos
+    const valorProdutos = parseFloat(pedidoResumo.totalProdutos) || 0;
+    const valorDesconto = parseFloat(pedidoResumo.desconto) || 0;
+    const valorFrete = parseFloat(pedidoResumo.frete) || 0;
+
+    const totalPedido = (valorProdutos + valorFrete - valorDesconto).toFixed(2);
+    pedidoResumo.total = totalPedido;
+    localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
+
+    spanDesconto.textContent = valorDesconto.toFixed(2);
+    spanFrete.textContent = valorFrete.toFixed(2);
+    spanTotal.textContent = totalPedido;
+    spanTotalProdutos.textContent = valorProdutos.toFixed(2);
 };
 
 function aplicarCupom() {
     const cupom = document.querySelectorAll('.loja-carrinho-menulateral-conteudo p');
     const inputCupom = document.getElementById('cupom').value;
-    const desconto = document.getElementById('desconto')
-    const valorDesconto = parseFloat(5) || 0;
+    const spanDesconto = document.getElementById('desconto')
+    const valorDesconto = parseFloat(5).toFixed(2) || 0.00;
 
-    let valorFrete = pedidoResumo.frete
-    let valorTotalProdutos = pedidoResumo.totalProdutos
-
-    if (inputCupom === 'PRIMEIRACOMPRA') {
+    if (inputCupom.toUpperCase() === 'PRIMEIRACOMPRA') {
         cupom.textContent = 'desconto aplicado';
-        desconto.textContent = valorDesconto.toFixed(2);
-        localStorage.setItem('pedido', JSON.stringify({ frete: valorFrete, 
-                                                        desconto: valorDesconto.toFixed(2),
-                                                        totalProdutos: valorTotalProdutos,
-                                                        total: (valorTotalProdutos - valorDesconto + valorFrete).toFixed(2) 
-                                                    }));
+        spanDesconto.textContent = valorDesconto;
+        pedidoResumo.desconto = valorDesconto;
+        localStorage.setItem('pedido', JSON.stringify(pedidoResumo))  
         inputCupom.value = ''  
     } else {
-        desconto.textContent = '0.00';
+        spanDesconto.textContent = '0.00';
     }
 };
 
 function aplicarFrete() {
-    const frete = document.getElementById('frete')
+    const spanfrete = document.getElementById('frete')
     const inputCEP = document.getElementById('cep').value;
-    const valorFrete = parseFloat(10).toFixed(2) || 0;
-
-    let valorDesconto = pedidoResumo.desconto
-    let valorTotalProdutos = pedidoResumo.totalProdutos
+    const valorFrete = parseFloat(10).toFixed(2) || 0.00;
 
     if (inputCEP.length === 8) {
-        frete.textContent = valorFrete;
-        localStorage.setItem('pedido', JSON.stringify({ frete: valorFrete, 
-                                                        desconto: valorDesconto,
-                                                        totalProdutos: valorTotalProdutos,
-                                                        total: (valorTotalProdutos - valorDesconto + valorFrete).toFixed(2) 
-                                                    }));
+        spanfrete.textContent = valorFrete;
+        pedidoResumo.frete = valorFrete;
+        localStorage.setItem('pedido', JSON.stringify(pedidoResumo))
         inputCEP.value = ''                                     
     } else {
-        frete.textContent = '0.00';
+        spanfrete.textContent = '0.00';
     }    
-}
+};
