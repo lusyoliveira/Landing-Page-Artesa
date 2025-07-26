@@ -13,8 +13,11 @@
     <header class="cabecalho">
         <!-- Menu -->      
         <nav>
-            <span><i class="bi bi-list"></i></span>
-            <ul>
+            <input type="checkbox" class="menu-check" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span><i class="bi bi-list"></i></span>
+            </label>
+            <ul class="lista-menu">
                 <li><a href="index.html" alt="Conta">Inicio</a></li>
                 <li><a href="blog.html" alt="Carrinho">Blog</a></li>
                 <li><a href="portfolio.html" alt="Carrinho">Portfolio</a></li>
@@ -37,8 +40,7 @@
 
     <main class="container">
             <!-- Sobre -->
-            <section class="conteudo">
-                <div class="sobre-conteudo">
+            <section class="sobre-conteudo">                
                     <div class="sobre-imagem">
                         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhI_nytlZO4T0dLXpiW8zFUzfbtYl_Sq5rN34v7yVEbvQZrqsGTKE8PU1qYU4k1cW2k7lGjveAZeKk5V8LPAxb6Y3Px47Fr3N6zHYfpgzmRpo2kb3Rdx_tjw4ygmSF7dCUzo6613nvM3TrCRG0fKafa-_qxmLIIIne6cQXWcPo0nb-wFns/s1600/IMG_1706.JPG" title="Perfil">
                     </div>                        
@@ -56,13 +58,12 @@
                             <a href="#" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
                             <a href="#" class="text-white mx-2"><i class="bi bi-twitter"></i></a>
                         </div>
-                    </div>
-                </div>  
+                    </div> 
             </section>
 
             <!-- Banner 1-->
-            <section class="conteudo">
-                <div class="banner-conteudo">
+            <section class="banner-conteudo">
+                <div class="banner">
                     <h1>Personalização</h1>
                     <p>Personalize seus produtos deixando com a sua cara.</p>
                 </div>
@@ -102,7 +103,9 @@
                 <div class="testemunho-conteudo">
                         <div class="testemunho-item">
                             <div class="testemunho-pessoa">
-                                <img title="testemunho" src="img/pexels-alena-shekhovtcova-6996168.jpg">                              
+                                <div class="testemunho-imagem">                                    
+                                    <img title="testemunho" src="/img/pexels-alena-shekhovtcova-6996168.jpg"> 
+                                </div>                             
                                 <div class="testemunho-descricao">
                                     <h4>Érica Moraes</h4>
                                     <div class="testemunho-classificacao">
@@ -120,8 +123,10 @@
                         </div>
 
                         <div class="testemunho-item">
-                            <div class="testemunho-pessoa">                                
-                                <img title="testemunho" src="img/pexels-dziana-hasanbekava-7275385.jpg">
+                            <div class="testemunho-pessoa">
+                                <div class="testemunho-imagem">                                  
+                                    <img title="testemunho" src="/img/pexels-dziana-hasanbekava-7275385.jpg">
+                                </div>
                                 <div class="testemunho-descricao">
                                     <h4>Reyla Sousa</h4>
                                     <div class="testemunho-classificacao">
@@ -139,8 +144,10 @@
                         </div>
 
                         <div class="testemunho-item">
-                            <div class="testemunho-pessoa">                                
-                                <img title="testemunho" src="img/pexels-gabby-k-5876695.jpg">
+                            <div class="testemunho-pessoa">
+                                <div class="testemunho-imagem">                                  
+                                    <img title="testemunho" src="/img/pexels-gabby-k-5876695.jpg">
+                                </div>
                                 <div class="testemunho-descricao">
                                     <h4>Suely Ramos</h4>
                                     <div class="testemunho-classificacao">
@@ -158,8 +165,10 @@
                         </div>
 
                         <div class="testemunho-item">
-                            <div class="testemunho-pessoa">                                
-                                <img title="testemunho" src="img/pexels-koolshooters-6976943.jpg">
+                            <div class="testemunho-pessoa"> 
+                                <div class="testemunho-imagem">                                 
+                                    <img title="testemunho" src="/img/pexels-koolshooters-6976943.jpg">
+                                </div>
                                 <div class="testemunho-descricao">
                                     <h4>Raquel Azevedo</h4>
                                     <div class="testemunho-classificacao">
@@ -176,8 +185,10 @@
                             </p>                            
                         </div>
                         <div class="testemunho-item">
-                            <div class="testemunho-pessoa">                                
-                                <img title="testemunho" src="img/pexels-olly-774909.jpg">
+                            <div class="testemunho-pessoa">
+                                <div class="testemunho-imagem">                                  
+                                    <img title="testemunho" src="/img/pexels-olly-774909.jpg">
+                                </div>
                                 <div class="testemunho-descricao">
                                     <h4>Karina Matos</h4>
                                     <div class="testemunho-classificacao">
@@ -249,7 +260,7 @@
     <footer class="footer">
             <div class="footer-conteudo">   
                 <div class="footer-conteudo-item">
-                    <img src="img/Logo.png">
+                    <img src="/img/Logo.png">
                     <div class="footer-conteudo-social">
                         <a href="www.instagram.com/lucieneoliveirart"><i class="bi bi-instagram"></i></a>
                         <a href="www.youtube.com/lucieneoliveirart"><i class="bi bi-youtube"></i></a>
