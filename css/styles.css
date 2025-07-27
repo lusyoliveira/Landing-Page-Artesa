@@ -82,18 +82,18 @@ h1,h2, h3, h4 {
 }
 h2 {
     text-align: center;
-    font-size: 2.25rem;
+    font-size: 2.25em;
     margin: 0.5em auto;
     color: var(--cor-branco);
 }
 h3 {
-    font-size: 1.5em;
+    font-size: 1.9em;
 }
 h4 {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 h5 {
-    font-size: .8em;
+    font-size: .9em;
 }
 .clearfix {
   clear: both;
@@ -103,7 +103,8 @@ svg {
     color: var(--cor-preto);
 }
 .conteudo,
-.banner-conteudo {
+.banner-conteudo
+.produtos-conteudo {
     margin: 4em auto;
 }
 .cabecalho-conteudo {    
@@ -424,7 +425,8 @@ nav form input[type="search"] {
 }
 .loja-carrinho-pagamentos,
 .loja-carrinho-produto,
-.testemunho-pessoa {
+.testemunho-pessoa,
+.produtos-detalhes {
     gap: 0.625em; 
 }
 .loja-carrinho-pagamentos {
@@ -635,6 +637,7 @@ nav form input[type="search"] {
     color: var(--cor-branco);
 }
 /* Testemunho */
+.blog,
 .testemunho {
     box-sizing: border-box;
     width: 100%;
@@ -647,7 +650,6 @@ nav form input[type="search"] {
     margin: auto 10%;
     background-color:transparent;
     text-align: center;
-    font-size: 2em;
 }
 .testemunho-conteudo > div,
 .blog-destaque-conteudo > div,
@@ -664,18 +666,11 @@ nav form input[type="search"] {
     object-fit: cover;
     border-radius: 70px;
 }
-.testemunho-pessoa h4  {
-    font-size: .6em;
-}
-.testemunho-item p  {
-    font-size: .4em;
+.testemunho-classificacao {
+    font-size: .9em;
     text-align:center;
 }
-.testemunho-classificacao {
-    font-size: .4em;
-}
 /* contato */
-
 .contato-conteudo-item form,
 .blog-postagem-destaque-conteudo {
     gap: 1.25em;
@@ -696,7 +691,7 @@ nav form input[type="search"] {
 }
 .produtos-descricao, 
 .blog-destaque-descricao {
-    margin: 0.9em;
+    margin: 0.6em;
     text-align: center;
     font-size: 1.2em;
 }
@@ -704,18 +699,16 @@ nav form input[type="search"] {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto;
-    grid-gap: 30px;
     background-color: transparent;
     padding: 10px;
     margin: auto 15%;
-    font-size: 1.3em;
 }
 .produtos-conteudo-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction:column;
-    gap: 0.3125em;
+    gap: 0.3em;
     text-align: center;
 }
 .produtos-conteudo-item h3 {
@@ -723,11 +716,11 @@ nav form input[type="search"] {
     margin: 5px 0;
     color: var(--cor-branco);
 }
+.testemunho-item p,
 .produtos-conteudo-item p {
     display: block;
     color: var(--cor-branco);
-    font-size: .7em;
-    text-align:center;
+    font-size: 1em;
 }
 .produtos-conteudo-item img {
     height: 135px;
@@ -778,8 +771,8 @@ nav form input[type="search"] {
 /* Blog */
 .blog-destaque-conteudo {
     gap: 1.25em;
-    margin: auto 10em;}
-
+    margin: auto 10em;
+}
 .blog-destaque-conteudo-item {
     transition: 1s;
     background-color: var(--cor-cinza-claro);
@@ -799,14 +792,12 @@ nav form input[type="search"] {
     gap: .6em;
     margin: 1em;
 }
-.blog-destaque-detalhes h5 {
+.blog-destaque-detalhes h3,
+.blog-destaque-detalhes a {
     color: var(--cor-violeta);  
     letter-spacing: 1px;
     text-align: left;
     text-transform: uppercase;
-}
-.blog-destaque-detalhes a {
-    color: var(--cor-violeta);  
 }
 .blog-destaque-data,
 .blog-destaque-link {
@@ -1067,19 +1058,20 @@ nav form input[type="search"] {
     padding-top: 1rem!important;
     padding-bottom: 1rem!important;
     text-align: center !important;
-    --bs-text-opacity: 1;
-    color: var(--cor-cinza-claro) !important;
     font-family: var(--fonte);
 }
 .footer-conteudo {
     gap:1.25em; 
     margin: 0 50px;
 }
+.footer-conteudo-item-social,
+.footer-conteudo-item-sobre,
 .footer-conteudo-item {
     flex: 1; 
     padding: 20px;
     align-items: center;
 }
+.footer-conteudo-item-social img,
 .footer-conteudo-item img {
     width: 100%;
     height: auto;
@@ -1090,19 +1082,24 @@ nav form input[type="search"] {
     font-size: 1.6em;
     margin: 1em auto;
 }
-.footer-conteudo-item ul{
+.footer-conteudo-item-sobre ul,
+.footer-conteudo-item ul {
     text-align: left;
     list-style-type: none;
     padding: 5px;
 }
+.footer-conteudo-item-sobre li,
+.footer-conteudo-item li,
+.footer-conteudo-item p {
+    font-size: 1.25rem;
+}
+.footer-conteudo-item-sobre li,
 .footer-conteudo-item li {
     padding-bottom: 5px;
-    font-size: 1.1em;
 }
 .footer-conteudo-item p {
-    text-align:justify;
+    text-align:left;
     color: var(--cor-branco);
-    font-size: 1.25rem;
 }
 .footer-conteudo-item-titulo {
     color: var(--cor-violeta) !important;
@@ -1119,15 +1116,6 @@ nav form input[type="search"] {
     padding:0;
     margin: 0 0 25px
 }
-.footer-conteudo-item-destaque h4 {
-    margin:0; 
-    text-align: left;
-}
-.footer-conteudo-item-destaque h5 {
-    margin-top: 10px;
-    text-align: left;
-    font-weight: lighter;
-}
 .footer-conteudo-item-destaque img {
     position:relative;
     float:left;
@@ -1138,9 +1126,10 @@ nav form input[type="search"] {
     margin:0 13px 0 0;
 }
 .footer-direitos {
-    font-size: 1em;
+    font-size: 1.3em;
 }
 .cabecalho-conteudo,
+.produtos-conteudo,
 .banner,
 .loja-novidades-conteudo,
 .loja-produto-categoria-destaque,
@@ -1150,6 +1139,7 @@ nav form input[type="search"] {
     align-items: center;
     justify-content: center;
 }
+.produtos-detalhes,
 .carrossel-controls,
 .blog-destaque-conteudo,
 .blog-postagem-destaque-conteudo {
@@ -1249,6 +1239,9 @@ nav,
 
 /* Tablets e celulares */
 @media screen and (max-width: 600px) {
+   h4,h5 {
+        font-size: 1.9em;
+    }
     nav,
     nav span,
     .menu-icon  {
@@ -1274,12 +1267,47 @@ nav,
     nav form,
     .lista-menu,
     .menu-check,
-    .menu-loja {
+    .menu-loja,
+    .footer-conteudo-item {
         display: none;
     }
-    .sobre-conteudo {
+    .testemunho-conteudo,
+    .produtos-detalhes,
+    .sobre-conteudo,
+    .blog-destaque-conteudo,
+    .footer-conteudo {
         flex-direction: column;
         align-items: center;
+    }
+    .produtos-conteudo-item img {
+        width: 100%;
+        height: auto;
+    }
+    .testemunho-item p,
+    .testemunho-classificacao,
+    .produtos-conteudo-item p {
+        font-size: 1.5em;
+    }
+    .produtos-detalhes,
+    .testemunho-conteudo {
+        gap: 2em
+    }
+    .blog-destaque-conteudo-item {
+        width: 500px;
+    }
+    .footer-conteudo-social {
+        font-size: 4em;
+        margin: .6em auto;
+    }
+    .footer-conteudo-item-titulo {
+        font-size: 3em;
+    }     
+    .footer-conteudo-item-sobre ul {
+        font-size: 3em;
+        text-align: center;
+    }
+    .footer-direitos {
+        font-size: 1.2em;
     }
 }
 /* Laptops e desktops */
