@@ -13,21 +13,25 @@
     <header class="cabecalho">
         <!-- Menu -->  
           <nav>
-            <span><i class="bi bi-list"></i></span>
-            <ul>
-                <li><a href="/index.html" alt="Conta" title="">Inicio</a></li>
-                <li><a href="/blog.html" alt="Carrinho" title="">Blog</a></li>
-                <li><a href="/portfolio.html" alt="Carrinho" title="">Portfolio</a></li>
-                <li><a href="/loja.html" alt="Carrinho" title="">Loja</a></li>
+            <input type="checkbox" class="menu-check" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span><i class="bi bi-list"></i></span>
+            </label>
+            <ul class="lista-menu">
+                <li><a href="/index.html" alt="Inicio">Inicio</a></li>
+                <li><a href="/blog.html" alt="Blog">Blog</a></li>
+                <li><a href="/portfolio.html" alt="Portfolio">Portfolio</a></li>
+                <li><a href="/loja.html" alt="Loja">Loja</a></li>
+                <li><a href="/contato.html" alt="Contato">Contato</a></li>
             </ul>
             <form role="search">
-                <input type="search" id="pesquisar" title="pesquisar" placeholder="Buscar..." aria-label="Search">
+                <input type="search" title="pesquisar" placeholder="Buscar..." aria-label="Search">
             </form>
             <ul id="menu-loja">
                 <li><a href="#" alt="Conta"><i class="bi bi-person-circle"></i></a></li>
                 <li><a href="#" alt="Carrinho"><i class="bi bi-cart"></i></a></li>
             </ul>
-        </nav>    
+        </nav>  
          
         <section class="carrossel-container">
                     <div class="carrossel-column">

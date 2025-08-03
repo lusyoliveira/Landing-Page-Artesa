@@ -1057,7 +1057,6 @@ nav form input[type="search"] {
 .footer {
     padding-top: 1rem!important;
     padding-bottom: 1rem!important;
-    text-align: center !important;
     font-family: var(--fonte);
 }
 .footer-conteudo {
@@ -1127,6 +1126,7 @@ nav form input[type="search"] {
 }
 .footer-direitos {
     font-size: 1.3em;
+    text-align: center;
 }
 .cabecalho-conteudo,
 .produtos-conteudo,
@@ -1239,14 +1239,17 @@ nav,
 
 /* Tablets e celulares */
 @media screen and (max-width: 600px) {
-   h4,h5 {
+    input {
+        padding: 5px;
+    }
+    h4,h5 {
         font-size: 1.9em;
     }
     nav,
     nav span,
     .menu-icon  {
         display: block;
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     .menu-check:checked ~ .lista-menu {
         display: flex;
@@ -1257,10 +1260,7 @@ nav,
         width: auto;
         background-color: var(--cor-cinza-escuro);
         padding: 15px;
-    }
-    .lista-menu li {
-        margin: 10px;
-    }
+    }    
     .lista-menu li:hover {
         background-color: var(--cor-violeta);
     }
@@ -1274,6 +1274,7 @@ nav,
     .testemunho-conteudo,
     .produtos-detalhes,
     .sobre-conteudo,
+    .contato-conteudo,
     .blog-destaque-conteudo,
     .footer-conteudo {
         flex-direction: column;
@@ -1311,10 +1312,29 @@ nav,
     }
 }
 /* Laptops e desktops */
-@media (min-width: 992px) {
-
-}
-/* Telas grandes */
-@media (min-width: 1200px) {
-
+@media (max-width: 1024px) {
+    .sobre-conteudo, 
+    .contato-conteudo {
+        margin: 4em 10%;
+    }
+    .sobre-descricao p {
+        font-size: 1rem;
+    }
+    .blog-destaque-conteudo,
+    .testemunho-conteudo {
+     margin: 0; 
+    }
+    h4,
+    .footer-conteudo-item-sobre li, 
+    .footer-conteudo-item li, 
+    .footer-conteudo-item p {
+    font-size: .9rem;
+    }
+    .footer-conteudo-item-destaque img {
+        width: 32px;
+        height: 32px;
+    }
+    .portfolio-conteudo {
+        margin: 1em 10em;
+    }
 }
