@@ -4,7 +4,6 @@ const btnProximo = document.getElementById('nextBtn');
 const btnComprar = document.querySelectorAll('.loja-novidades-comprar');
 const btncupom = document.getElementById('btn-cupom');
 const btnBuscaCep = document.getElementById('btn-busca-cep');
-const menuLoja = document.getElementById('menu-loja');
 const spanTotalProdutos = document.getElementById('total-produtos')
 const spanTotal = document.getElementById('total')
 const spanDesconto = document.getElementById('desconto')
@@ -13,8 +12,6 @@ const carrinhoCompra = JSON.parse(localStorage.getItem('carrinho')) || [];
 const pedidoResumo = JSON.parse(localStorage.getItem('pedido')) || [];
 
 let currentIndex = 0;
-
-menuLoja.style.display = 'flex';
 
 //Carrossel
 btnAnterior.addEventListener('click', () => {

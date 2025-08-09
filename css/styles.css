@@ -19,7 +19,8 @@
     --banner-cabecalho: url("../img/Banner (1).png") no-repeat; 
     --primeira-categoria: url("../img/DiarioDestaque.JPG"); 
     --segunda-categoria: url("../img/GrimórioDestaque.JPG"); 
-    --destaque-categoria: url("../img/Planner.jpg"); 
+    --destaque-categoria: url("../img/Planner.jpg");  
+    --postagem-destaque: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggDV7U-xtkr6MXtDrqgVvOhvOm_4QcNwSVfrd7w2Hqh3nmuZu4ZyDBzCz4E38Vbp4UQETqdXdLVD__KtyIWY4-0JpGPkcYauN_Rq1fD5oeKb7mKZ8tBmbncqZGu-0CJsuImsfhrJ7PXx40/d/capa2.jpg"); 
     --espacamento-padrao: 20px;
     --borda-padrao: 5px;
 }
@@ -131,6 +132,7 @@ nav span {
    font-size: 1.5rem;
    display: none;
 }
+.menu-loja li a,
 .lista-menu li a {
     background: none;
     border: none;
@@ -811,6 +813,11 @@ nav form input[type="search"] {
     margin: auto 20%;
     border-radius: 10px;
     padding: 30px;
+    background: var(--postagem-destaque);    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
 }
 .blog-principal-destaque-descricao {
     width: 50%;
@@ -818,6 +825,7 @@ nav form input[type="search"] {
 .blog-principal-destaque-descricao h2 {
     text-align: left;
     margin-bottom: 10px;
+    color: var(--cor-violeta);
 }
 .blog-principal-destaque-descricao p, 
 .blog-principal-destaque-link {
@@ -825,6 +833,7 @@ nav form input[type="search"] {
     margin: 30px 0;
     font-size: 1.25em;
     font-weight: 300;
+    color: var(--cor-violeta);
 }
 .blog-principal,
 .loja-carrinho-principal,
@@ -847,7 +856,7 @@ nav form input[type="search"] {
     height: 320px;
 }
 .blog-principal-imagem {
-    width: 80%;
+    width: 65%;
 }
 .blog-principal-imagem img {
     height: 320px;
@@ -1242,13 +1251,20 @@ nav,
     input {
         padding: 5px;
     }
-    h4,h5 {
+    h3 {
+        font-size: 1em;
+    }
+    h4{
         font-size: 1.9em;
     }
-    nav,
+    .blog-destaque-data,
+    .blog-principal-tags {
+        font-size: .8em;
+    }
     nav span,
-    .menu-icon  {
-        display: block;
+    .menu-icon,
+    .menu-loja {
+        display: flex;
         font-size: 3.5rem;
     }
     .menu-check:checked ~ .lista-menu {
@@ -1267,8 +1283,9 @@ nav,
     nav form,
     .lista-menu,
     .menu-check,
-    .menu-loja,
-    .footer-conteudo-item {
+    .footer-conteudo-item,
+    .blog-principal-menulateral,
+    .blog-principal-conteudo-detalhes p {
         display: none;
     }
     .testemunho-conteudo,
@@ -1296,13 +1313,36 @@ nav,
     .blog-destaque-conteudo-item {
         width: 500px;
     }
+    .blog-principal-conteudo,
+    .blog-principal-destaque-descricao {
+        width: 100%;
+    }
+    .blog-principal-conteudo-item {
+        height: 150px;
+    }
+    .blog-principal-imagem img {
+        height: 150px;
+    }
+    .blog-principal-imagem {
+        width: 50%;
+    }
+    .blog-principal-conteudo-detalhes {
+        padding: .6em;
+        gap: .3em;
+    }
+    .blog-principal-destaque-conteudo {
+        margin: auto 10%;
+        height: 250px;
+    }
+    .blog-destaque-conteudo-item {
+        width: 250px;
+    }
     .footer-conteudo-social {
         font-size: 4em;
         margin: .6em auto;
+        text-align: center;
     }
-    .footer-conteudo-item-titulo {
-        font-size: 3em;
-    }     
+    .footer-conteudo-item-titulo,
     .footer-conteudo-item-sobre ul {
         font-size: 3em;
         text-align: center;
