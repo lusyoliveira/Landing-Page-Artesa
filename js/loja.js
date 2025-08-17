@@ -12,25 +12,28 @@ const carrinhoCompra = JSON.parse(localStorage.getItem('carrinho')) || [];
 const pedidoResumo = JSON.parse(localStorage.getItem('pedido')) || [];
 
 let currentIndex = 0;
-
-//Carrossel
-btnAnterior.addEventListener('click', () => {
-    imagem[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex === 0) ? imagem.length - 1 : currentIndex - 1;
-    imagem[currentIndex].classList.add('active');
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.endsWith('loja.html')) {
+        //Carrossel
+        btnAnterior.addEventListener('click', () => {
+            imagem[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex === 0) ? imagem.length - 1 : currentIndex - 1;
+            imagem[currentIndex].classList.add('active');
+        });
+        
+        btnProximo.addEventListener('click', () => {
+            imagem[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex === imagem.length - 1) ? 0 : currentIndex + 1;
+            imagem[currentIndex].classList.add('active');
+        });
+        
+        setInterval(() => {
+            imagem[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex === imagem.length - 1) ? 0 : currentIndex + 1;
+            imagem[currentIndex].classList.add('active');
+        }, 5000);
+    }
 });
-
-btnProximo.addEventListener('click', () => {
-    imagem[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex === imagem.length - 1) ? 0 : currentIndex + 1;
-    imagem[currentIndex].classList.add('active');
-});
-
-setInterval(() => {
-    imagem[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex === imagem.length - 1) ? 0 : currentIndex + 1;
-    imagem[currentIndex].classList.add('active');
-}, 5000);
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.endsWith('carrinho.html')) {
