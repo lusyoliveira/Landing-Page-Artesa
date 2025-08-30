@@ -482,7 +482,7 @@ nav ul li {
 .loja-catalogo-conteudo h2 {
     text-align: left;
 }
-.loja-catalogo-carrossel {
+.loja-catalogo-grid {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto;
@@ -490,13 +490,13 @@ nav ul li {
     background-color: transparent;
     padding: 10px;
 }
-.loja-catalogo-carrossel > div {
+.loja-catalogo-grid > div {
     background-color: var(--cor-cinza-claro);
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
 }
-.loja-catalogo-carrossel img {
+.loja-catalogo-grid img {
     object-fit: contain;
     width: 150px;
 }
