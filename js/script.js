@@ -1,4 +1,4 @@
-const menuLoja = document.getElementById('menu-loja')
+const menuLoja = document.querySelector('.menu-loja');
 
 menuLoja.style.display = 'none';
 
