@@ -252,6 +252,17 @@ nav form input[type="search"] {
     padding: .5em;
     border-radius: 30px;
 }
+.loja-carrinho-quantidade-menu {
+    display: none;
+    background-color: var(--cor-violeta);
+    color: var(--cor-branco);
+    border-radius: 100px;
+    padding: 4px 6px;
+    font-size: .7em;
+    position: absolute;
+    top: 30px;
+    right:110px;
+}
 .loja-produto-destaque-conteudo {
     padding: 10px;
     margin: auto 10%;    
@@ -416,7 +427,6 @@ nav form input[type="search"] {
     display: flex;
     align-items: center;
     justify-content: start;
-    font-size: 2em;
 }
 .loja-carrinho-pagamentos,
 .loja-carrinho-produto,
@@ -430,18 +440,18 @@ nav form input[type="search"] {
 .loja-carrinho-pagamentos button {
     width: 100%;
 }
-.loja-carrinho-pagamentos-metodos button {
-    width: 50px;
-    height: 50px;
-}
 .loja-carrinho-quantidade input,
-.loja-carrinho-quantidade button {
+.loja-carrinho-quantidade input,
+.loja-carrinho-quantidade button,
+.loja-carrinho-pagamentos-metodos button {
+    text-align: center;
     width: 40px;
     height: 40px;
     margin: 0;
+    padding: 0;
 }
+
 .loja-produto-quantidade input[type="text"],
-.loja-carrinho-quantidade input[type="text"],
 .loja-produto-cep input[type="text"] {
     width: 40px;
     text-align: center;

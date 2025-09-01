@@ -197,6 +197,18 @@ function somarProdutos(listaProdutos) {
     return soma.toFixed(2);
 };
 
+function contarProdutos() {
+    const quantidade = carrinhoCompra.length
+    const divQuantidade = document.getElementById('carrinho-quantidade')
+    
+    if (quantidade > 0) {
+        divQuantidade.textContent = quantidade; 
+        divQuantidade.style.display = 'block';                                    
+    } else {
+        divQuantidade.style.display = 'none';
+    } 
+};
+
 function calculaPedido() {
     const valorProdutos = parseFloat(pedidoResumo.totalProdutos) || 0;
     const valorDesconto = parseFloat(pedidoResumo.desconto) || 0;
@@ -210,6 +222,7 @@ function calculaPedido() {
     spanFrete.textContent = valorFrete.toFixed(2);
     spanTotal.textContent = totalPedido;
     spanTotalProdutos.textContent = valorProdutos.toFixed(2);
+    contarProdutos()
 };
 
 function aplicarCupom() {
