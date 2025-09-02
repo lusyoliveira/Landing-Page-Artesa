@@ -148,6 +148,9 @@ nav {
     height: auto;
     object-fit: scale-down;
 }
+nav ul {
+    position: relative;
+}
 nav span {
    font-size: 1.5rem;
    display: none;
@@ -260,8 +263,8 @@ nav form input[type="search"] {
     padding: 4px 6px;
     font-size: .7em;
     position: absolute;
-    top: 30px;
-    right:110px;
+    top: 13px;
+    right: 0;
 }
 .loja-produto-destaque-conteudo {
     padding: 10px;
@@ -1283,6 +1286,10 @@ nav,
     .loja-carrinho-conteudo,
     .loja-carrinho-menulateral {
         width: 100%;
+    }
+    loja-carrinho-quantidade-menu {
+        top: 5px;
+        right: 10px;
     }
 }
 /* Laptops e desktops */

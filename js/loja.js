@@ -152,6 +152,18 @@ function carregaProdutos(listaProdutos) {
                 valorcontador -= 1;
                 inputQuantidade.value = valorcontador;
             }
+            //TODO implementar remoção do item se quantidade for 0
+            if (valorcontador === 0) {
+                carrinhoCompra.splice(index, 1);
+                localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
+                carregaProdutos(carrinhoCompra);
+                contarProdutos();
+
+                pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
+                localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
+                calculaPedido();
+                return;
+            }
             novoValor = parseFloat(precoProduto) * valorcontador
             carrinhoCompra[index].valorTotal = novoValor
             carrinhoCompra[index].quantidade = valorcontador;
@@ -222,7 +234,6 @@ function calculaPedido() {
     spanFrete.textContent = valorFrete.toFixed(2);
     spanTotal.textContent = totalPedido;
     spanTotalProdutos.textContent = valorProdutos.toFixed(2);
-    contarProdutos()
 };
 
 function aplicarCupom() {
@@ -256,3 +267,5 @@ function aplicarFrete() {
         spanfrete.textContent = '0.00';
     }    
 };
+
+contarProdutos();
