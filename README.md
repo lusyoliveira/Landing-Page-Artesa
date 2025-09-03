@@ -1,12 +1,14 @@
 # Landing Page Artesã
 
 ## Sobre o Projeto
-Projeto de uma landing page para expor projetos e serviços de um artesã.
+Projeto de uma landing page para expor projetos e serviços de uma artesã.
 O site inclui:
 - **Landing Page**: Página inicial com resumo de produtos e serviço oferecidos.
 - **Blog**: Espaço para publicar artigos de assunto relacionados ao trabalho oferecido pela artesã.
-- **Galaeria**: Galeria de imagens com último projeto realizados pela artesã.
-- **Loja**: Catálogo de produtos oferecido pela artesã que estão disponíveis para compra.
+- **Galaeria**: Galeria de imagens com últimos projetos.
+- **Loja**: Página inicial da Loja com produtos por categoria e banners de destaque.
+- **Catálogo**: Catálogo com produtos disponíveis para compra.
+- **Carrinho**: Carrinho de compras com simulação, sendo possível adicionar e remover produtos do carrinho de compras, e efetuando 0 calculo do pedido.
 
 ## Tecnologias Utilizadas
 
@@ -14,6 +16,7 @@ O site inclui:
 - CSS3: Estilização, responsividade.
 - Bootstrap: ícones.
 - Imagens dos testemunho obtidas do site: https://www.pexels.com/pt-br/
+- Javascript para simulação do carrinho de compras.
 
 ## Como Executar Localmente
 1. Faça o clone do repositório:
