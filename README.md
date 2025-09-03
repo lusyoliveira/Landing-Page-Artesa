@@ -8,7 +8,7 @@ O site inclui:
 - **Galaeria**: Galeria de imagens com últimos projetos.
 - **Loja**: Página inicial da Loja com produtos por categoria e banners de destaque.
 - **Catálogo**: Catálogo com produtos disponíveis para compra.
-- **Carrinho**: Carrinho de compras com simulação, sendo possível adicionar e remover produtos do carrinho de compras, e efetuando 0 calculo do pedido.
+- **Carrinho**: Carrinho de compras interativo, sendo possível adicionar e remover produtos do carrinho de compras, e efetuando o calculo do pedido.
 
 ## Tecnologias Utilizadas
 
@@ -16,7 +16,7 @@ O site inclui:
 - CSS3: Estilização, responsividade.
 - Bootstrap: ícones.
 - Imagens dos testemunho obtidas do site: https://www.pexels.com/pt-br/
-- Javascript para simulação do carrinho de compras.
+- Javascript para criar interatividade no carrinho de compras da loja.
 
 ## Como Executar Localmente
 1. Faça o clone do repositório:
