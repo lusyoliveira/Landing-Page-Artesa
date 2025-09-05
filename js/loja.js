@@ -1,7 +1,7 @@
 const imagem = document.querySelectorAll('#imagecarrossel img');
 const btnAnterior = document.getElementById('prevBtn');
 const btnProximo = document.getElementById('nextBtn');
-const btnComprar = document.querySelectorAll('.loja-novidades-comprar');
+const btnComprar = document.querySelectorAll('.loja-produto-conteudo-comprar');
 const btncupom = document.getElementById('btn-cupom');
 const btnBuscaCep = document.getElementById('btn-busca-cep');
 const spanTotalProdutos = document.getElementById('total-produtos')
@@ -62,10 +62,10 @@ btnComprar.forEach((botao) => {
     botao.addEventListener('click', (evento) => {
         evento.preventDefault(); 
     
-        const detalhes = botao.closest('.loja-novidades-produto-detalhes');
+        const detalhes = botao.closest('#detalhes-produto');
 
         const descricao = detalhes.querySelector('h3').textContent;
-        const preco = detalhes.querySelector('.loja-novidades-preco strong').textContent;
+        const preco = detalhes.querySelector('.loja-produtos-detalhes strong').textContent;
         const imagemProduto = detalhes.querySelector('img').src
 
         const item = {

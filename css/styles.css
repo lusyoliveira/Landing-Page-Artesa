@@ -342,33 +342,12 @@ nav form input[type="search"] {
     text-align: center;
     position: relative;
 }
-.loja-novidades-comprar {
-    background-color: var(--cor-violeta);
-    color: var(--cor-branco);
-    border-radius: 30px;
-    padding: .5em;
-    display: inline-block;
-}
-.loja-novidades-produto-conteudo {
-    gap: 3em;
-    padding-bottom: 2em;
-}
-.loja-novidades-preco,
-.loja-catalogo-produtos {    
+.loja-novidades-preco {    
     height: 50px;
     gap: .4em;
 }
 .loja-novidades-preco p {
     font-size: 1.5em;
-}
-.loja-novidades-favorito {
-    background-color: var(--cor-violeta);
-    color: var(--cor-branco);
-    border-radius: 5px;
-    padding: .5em;
-    position: absolute;
-    top:1em;
-    right: 1em;
 }
 
 .loja-pagamentos-conteudo {
@@ -445,6 +424,8 @@ nav form input[type="search"] {
 }
 .loja-carrinho-quantidade input,
 .loja-carrinho-quantidade input,
+.loja-produto-principal-quantidade input,
+.loja-produto-principal-quantidade button,
 .loja-carrinho-quantidade button,
 .loja-carrinho-pagamentos-metodos button {
     text-align: center;
@@ -453,15 +434,12 @@ nav form input[type="search"] {
     margin: 0;
     padding: 0;
 }
-
-.loja-produto-quantidade input[type="text"],
 .loja-produto-cep input[type="text"] {
     width: 40px;
     text-align: center;
     border: 1px solid var(--cor-branco);
     border-radius: 5px;
     padding: 7px;
-    margin: 5px;
 }
 .loja-carrinho-conteudo-item img {
     width:64px;
@@ -484,21 +462,54 @@ nav form input[type="search"] {
 .loja-carrinho-conteudo-item tfoot a:hover {
     background-color:  var(--cor-preto);
 }
-.loja-catalogo-grid {
+.loja-produto { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 40px;  
+    background-color: var(--cor-preto);
+}
+.loja-produto-conteudo {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: .5em;
+    padding-bottom: 3em;
 }
-.loja-catalogo-grid > div {
+.loja-produto-conteudo > div {
+    position: relative;
     text-align: center;
-    height: 450px;
+    height: auto;
     color: var(--cor-branco);
-    padding: 0 .8em;
+    padding-bottom: 15px;
 }
-.loja-catalogo-grid-produto img {
+.loja-produto-conteudo img {
     object-fit: cover;
     width: 230px;
-    height: auto;
-    margin: 0 20px;
+    height: 270px;
+    cursor: pointer;
+    border-radius: 30px;
+    object-fit: cover;
+    transition: 0.5s;
+    display: block;
+  }
+.loja-produto-conteudo-comprar {
+    background-color: var(--cor-violeta);
+    color: var(--cor-branco);
+    border-radius: 30px;
+    padding: .5em;
+    display: inline-block;
+}
+.loja-produto-conteudo-favorito {
+    background-color: var(--cor-violeta);
+    color: var(--cor-branco);
+    border-radius: 5px;
+    padding: .5em;
+    position: absolute;
+    top:1em;
+    right: 1em;
 }
 .loja-catalogo-menulateral-conteudo ul {
     margin-top: 10px;
@@ -522,7 +533,7 @@ nav form input[type="search"] {
 .loja-catalogo-menulateral-faixa input {
     width: 100%;
 }
-.loja-produto-conteudo {
+.loja-produto-principal-conteudo {
     display: grid;
     grid-template-columns: 20% 30% 50%;
     grid-template-rows: auto;
@@ -530,52 +541,52 @@ nav form input[type="search"] {
     background-color: transparent;
     color: var(--cor-branco);
 }
-.loja-produto-conteudo > div {
+.loja-produto-principal-conteudo > div {
     padding: 20px 0;
     font-size: 30px;
 }
-.loja-produto-conteudo img {
+.loja-produto-principal-conteudo img {
     object-fit: contain;
     width: 150px;
 }
-.loja-produto-miniatura img {
+.loja-produto-principal-miniatura img {
     margin: auto 20%;
     width:150px;
     height:150px;
 }
-.loja-produto-imagem img {
+.loja-produto-principal-imagem img {
     width:100%;
     height:auto;
     border-radius:6px;
     object-fit: cover;
 }
-.loja-produto-especificacao {
+.loja-produto-principal-especificacao {
     display: flex;
     flex-direction: column;
     margin: auto 20px;
     justify-content: start;
     gap: .3em;
 }
-.loja-produto-especificacao strong {
+.loja-produto-principal-especificacao strong {
     font-size: .9em;
     color: var(--cor-branco);
 }
-.loja-produto-descricao,
-.loja-produto-especificacao {
+.loja-produto-principal-descricao,
+.loja-produto-principal-especificacao {
     font-size: .6em;
 }
-.loja-produto-componentes {
+.loja-produto-principal-componentes {
     display:contents;
     flex-direction: column;
     padding: 0 1em;
 }
-.loja-produto-componentes select {
+.loja-produto-principal-componentes select {
     width: 220px;
     font-size: .6em;
     color: var(--cor-cinza-escuro);
     padding: .2em;
 }
-.loja-produto-componentes a {
+.loja-produto-principal-componentes a {
     background-color: var(--cor-preto);
     border-radius: 30px;
     padding: .5em;
@@ -583,16 +594,14 @@ nav form input[type="search"] {
     text-align: center;
     width: 220px;
 }
-.loja-produto-quantidade,
-.loja-produto-cep {
+.loja-produto-principal-quantidade,
+.loja-produto-principal-cep {
     display: flex;
     justify-content: start;
     font-size: .7em;
+    gap: .3em;
 }
-.loja-produto-quantidade input,
-.loja-produto-cep input {
-    font-size: .7em;
-    color: var(--cor-cinza-escuro);
+.loja-produto-principal-cep input {
     padding: 10px;
     margin: 5px;
 }
@@ -659,11 +668,11 @@ nav form input[type="search"] {
     font-size: .9em;
     text-align:center;
 }
+.loja-produto-destaque-grid > div,
 .testemunho-conteudo > div,
 .blog-destaque-conteudo > div,
+.loja-produto-conteudo > div,
 .blog-postagem-destaque-conteudo > div,
-.loja-catalogo-grid > div,
-.loja-produto-destaque-grid > div,
 .contato-conteudo > div {
     flex: 1;
 }
@@ -1092,7 +1101,7 @@ nav form input[type="search"] {
 }
 .loja-novidades-produto,
 .loja-novidades-preco,
-.loja-catalogo-produtos {
+.loja-produtos-detalhes {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -1139,8 +1148,6 @@ nav ul,
 .footer-conteudo {
     display: flex;
 }
-
-.loja-novidades-produto-conteudo,
 .blog-principal,
 .loja-carrinho-principal,
 .loja-catalogo-principal,
@@ -1262,7 +1269,7 @@ nav,
         padding: .6em;
         gap: .3em;
     }
-    .loja-produto-conteudo {
+    .loja-produto-principal-conteudo {
         grid-template-columns: 50% 50%;
     }
     .footer-conteudo-social {
