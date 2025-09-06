@@ -15,8 +15,8 @@
     --bs-breakpoint-xl: 1200px;
     --bs-breakpoint-xxl: 1400px;
     --fonte: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    --banner-fundo: url("../img/Banner (4).jpg") no-repeat; 
-    --banner-cabecalho: url("../img/Banner (1).png") no-repeat; 
+    --banner-fundo: url("../img/Cabecalho-2.jpg") no-repeat; 
+    --banner-cabecalho: url("../img/Cabecalho-1.png") no-repeat; 
     --primeira-categoria: url("../img/DiarioDestaque.JPG"); 
     --segunda-categoria: url("../img/GrimórioDestaque.JPG"); 
     --destaque-categoria: url("../img/Planner.jpg");  
