@@ -27,3 +27,4 @@ git clone https://github.com/lusyoliveira/Landing-Page-Artesa.git
 3. Certifique-se de que todas as imagens e arquivos CSS/JS estão no diretório correto.
 
 ## Deploy
+[https://lusyoliveira.github.io/Landing-Page-Artesa/](https://lusyoliveira.github.io/Landing-Page-Artesa/)
