@@ -666,6 +666,7 @@ nav form input[type="search"] {
 .testemunho-classificacao {
     font-size: .9em;
     text-align:center;
+    color: var(--cor-violeta);
 }
 .loja-produto-destaque-grid > div,
 .testemunho-conteudo > div,
