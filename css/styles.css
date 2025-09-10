@@ -654,7 +654,7 @@ nav form input[type="search"] {
     height: 60px;
 }
 .testemunho-pessoa img {
-    width: 100%;
+    width: 50px;
     height: 50px;
     object-fit: cover;
     border-radius: 70px;
@@ -678,6 +678,7 @@ nav form input[type="search"] {
 }
 .produtos-descricao, 
 .blog-destaque-descricao {
+    color: var(--cor-branco);
     margin-bottom: 0.8em;
     text-align: center;
     font-size: 1.2em;
@@ -757,9 +758,9 @@ nav form input[type="search"] {
 }
 .blog-destaque-conteudo-item img {
     height: 316px;
-    width: auto;
+    width: 100%;
     transition: 1s;
-    margin: 1em;
+    padding: 1em;
     object-fit: cover;
 }
 .blog-destaque-conteudo-item:hover img {
@@ -835,7 +836,7 @@ nav form input[type="search"] {
 }
 .blog-principal-imagem img {
     width:  400px;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 .blog-principal-conteudo-detalhes {
