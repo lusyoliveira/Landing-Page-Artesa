@@ -83,7 +83,10 @@ btnComprar.forEach((botao) => {
             desconto: 0, 
             totalProdutos: somarProdutos(carrinhoCompra), 
             total: somarProdutos(carrinhoCompra) 
-        }))      
+        }));
+        setTimeout(() => {
+            window.location.href = '../loja/carrinho.html';
+        }, 200);      
     })
 });
 
@@ -145,14 +148,14 @@ function carregaProdutos(listaProdutos) {
         btnDiminuir.setAttribute ('title', 'Diminuir Quantidade')   
         btnDiminuir.onclick  = () => {
             let valorcontador = parseInt(inputQuantidade.value) || 0;
-            const precoProduto = carrinhoCompra[index].valor //.replace(',', '.')
+            const precoProduto = carrinhoCompra[index].valor 
             let novoValor = 0
 
             if (valorcontador > 0) {
                 valorcontador -= 1;
                 inputQuantidade.value = valorcontador;
             }
-            //TODO implementar remoção do item se quantidade for 0
+  
             if (valorcontador === 0) {
                 carrinhoCompra.splice(index, 1);
                 localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
