@@ -605,6 +605,13 @@ nav form input[type="search"] {
     padding: 10px;
     margin: 5px;
 }
+.loja-carrinho-vazio {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--cor-branco);
+    margin: 1em;
+    width: 100%;
+}
 /* sobre*/
 .sobre-conteudo,
 .contato-conteudo {

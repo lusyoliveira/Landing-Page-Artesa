@@ -57,10 +57,10 @@
     <!-- Conteúdo Principal -->
     <main class="container">
         <section class="loja-carrinho-principal">
-            <div class="loja-carrinho-conteudo">     
-                <div class="loja-carrinho-conteudo-item">                          
+            <div class="loja-carrinho-conteudo" id="carrinho-conteudo">     
+                <div class="loja-carrinho-conteudo-item" id="carrinho-itens">                          
                     <h3>Produtos do Carrinho</h3> 
-                    <table>
+                    <table id="tabela-carrinho">
                         <thead>
                             <tr>
                                 <th>Produto</th>
@@ -68,9 +68,7 @@
                                 <th>Valor</th>
                             </tr>
                         </thead>
-                        <tbody id="carrinho">
-                            
-                        </tbody>
+                        <tbody id="carrinho"></tbody>
                         <tfoot>
                             <tr>
                                 <th scope="row" colspan="3">
@@ -147,7 +145,7 @@
     <footer class="footer">
         <div class="footer-conteudo">   
             <div class="footer-conteudo-item-social">
-                <img src="img/Logo.png">
+                <img src="../img/Logo.png">
                 <div class="footer-conteudo-social">
                     <a href="www.instagram.com/lucieneoliveirart"><i class="bi bi-instagram"></i></a>
                     <a href="www.youtube.com/lucieneoliveirart"><i class="bi bi-youtube"></i></a>

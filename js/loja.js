@@ -84,6 +84,13 @@ btnComprar.forEach((botao) => {
             totalProdutos: somarProdutos(carrinhoCompra), 
             total: somarProdutos(carrinhoCompra) 
         }));
+
+
+         if (window.location.pathname.endsWith('loja.html')) {
+            setTimeout(() => {
+                window.location.href = 'loja/carrinho.html';
+            }, 200);
+         }
         setTimeout(() => {
             window.location.href = '../loja/carrinho.html';
         }, 200);      
@@ -92,114 +99,111 @@ btnComprar.forEach((botao) => {
 
 function carregaProdutos(listaProdutos) {
     const linhaTabela = document.getElementById('carrinho');
+
     if (!linhaTabela) return;
-
     linhaTabela.innerHTML = '';      
-            
-        listaProdutos.forEach((produto, index) => {
-        const tr = document.createElement('tr')
-        const tdProduto = document.createElement('td')
-        const divProduto = document.createElement('div')
-        divProduto.classList.add('loja-carrinho-produto')
 
-        const imgProduto = document.createElement('img')
-        imgProduto.setAttribute('src', produto.imagem)
+    listaProdutos.forEach((produto, index) => {
+    const tr = document.createElement('tr')
+    const tdProduto = document.createElement('td')
+    const divProduto = document.createElement('div')
+    divProduto.classList.add('loja-carrinho-produto')
 
-        const descricaoProduto = document.createElement('p')
-        descricaoProduto.textContent = produto.produto
+    const imgProduto = document.createElement('img')
+    imgProduto.setAttribute('src', produto.imagem)
 
-        const tdQuantidade = document.createElement('td')
-        const divQuantidade = document.createElement('div')
-        divQuantidade.classList.add('loja-carrinho-quantidade')
-     
-        const inputQuantidade  = document.createElement('input')
-        inputQuantidade.setAttribute ('type', 'text')
-        inputQuantidade.setAttribute ('value', produto.quantidade)
-        
-        const tdValor = document.createElement('td')
-        tdValor.textContent = produto.valorTotal
-        tdValor.classList.add('text-center')
+    const descricaoProduto = document.createElement('p')
+    descricaoProduto.textContent = produto.produto
 
-        const btnAumentar = document.createElement('button')   
-        btnAumentar.setAttribute ('title', 'Aumentar Quantidade')
-        btnAumentar.onclick = () => {
-            let valorcontador = parseInt(inputQuantidade.value) || 0;
-            const precoProduto = carrinhoCompra[index].valor //.replace(',', '.')
-            let novoValor = 0
+    const tdQuantidade = document.createElement('td')
+    const divQuantidade = document.createElement('div')
+    divQuantidade.classList.add('loja-carrinho-quantidade')
+    
+    const inputQuantidade  = document.createElement('input')
+    inputQuantidade.setAttribute ('type', 'text')
+    inputQuantidade.setAttribute ('value', produto.quantidade)
+    
+    const tdValor = document.createElement('td')
+    tdValor.textContent = produto.valorTotal
+    tdValor.classList.add('text-center')
 
-            valorcontador += 1;
-            inputQuantidade.value = valorcontador;
+    const btnAumentar = document.createElement('button')   
+    btnAumentar.setAttribute ('title', 'Aumentar Quantidade')
+    btnAumentar.onclick = () => {
+        let valorcontador = parseInt(inputQuantidade.value) || 0;
+        const precoProduto = carrinhoCompra[index].valor 
+        let novoValor = 0
 
-            novoValor = parseFloat(precoProduto) * parseFloat(valorcontador)
-            carrinhoCompra[index].valorTotal = novoValor;
-            carrinhoCompra[index].quantidade = valorcontador;
-            tdValor.textContent = novoValor;
-            localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
+        valorcontador += 1;
+        inputQuantidade.value = valorcontador;
 
-            pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
-            localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
-            calculaPedido()
-        };
+        novoValor = parseFloat(precoProduto) * parseFloat(valorcontador)
+        carrinhoCompra[index].valorTotal = novoValor;
+        carrinhoCompra[index].quantidade = valorcontador;
+        tdValor.textContent = novoValor;
+        localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
 
-        const iconeAumentar = document.createElement('i')
-        iconeAumentar.classList.add('bi','bi-plus-lg')
-
-        const btnDiminuir = document.createElement('button')   
-        btnDiminuir.setAttribute ('title', 'Diminuir Quantidade')   
-        btnDiminuir.onclick  = () => {
-            let valorcontador = parseInt(inputQuantidade.value) || 0;
-            const precoProduto = carrinhoCompra[index].valor 
-            let novoValor = 0
-
-            if (valorcontador > 0) {
-                valorcontador -= 1;
-                inputQuantidade.value = valorcontador;
-            }
-  
-            if (valorcontador === 0) {
-                carrinhoCompra.splice(index, 1);
-                localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
-                carregaProdutos(carrinhoCompra);
-                contarProdutos();
-
-                pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
-                localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
-                calculaPedido();
-                return;
-            }
-            novoValor = parseFloat(precoProduto) * valorcontador
-            carrinhoCompra[index].valorTotal = novoValor
-            carrinhoCompra[index].quantidade = valorcontador;
-            tdValor.textContent = novoValor;
-            localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
-
-            pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
-            localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
-            calculaPedido()
-        };
-
-        const iconeDiminuir = document.createElement('i')
-        iconeDiminuir.classList.add('bi', 'bi-dash-lg')
-
-        divProduto.appendChild(imgProduto)
-        divProduto.appendChild(descricaoProduto)
-        tdProduto.appendChild(divProduto)
-
-        btnAumentar.appendChild(iconeAumentar)
-        btnDiminuir.appendChild(iconeDiminuir)
-        divQuantidade.appendChild(btnDiminuir)
-        divQuantidade.appendChild(inputQuantidade)
-        divQuantidade.appendChild(btnAumentar)
-        tdQuantidade.appendChild(divQuantidade)
-
-        tr.appendChild(tdProduto)
-        tr.appendChild(tdQuantidade)
-        tr.appendChild(tdValor)
-
-        linhaTabela.appendChild(tr)
-
+        pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
+        localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
         calculaPedido()
-    });    
+    };
+
+    const iconeAumentar = document.createElement('i')
+    iconeAumentar.classList.add('bi','bi-plus-lg')
+
+    const btnDiminuir = document.createElement('button')   
+    btnDiminuir.setAttribute ('title', 'Diminuir Quantidade')   
+    btnDiminuir.onclick  = () => {
+        let valorcontador = parseInt(inputQuantidade.value) || 0;
+        const precoProduto = carrinhoCompra[index].valor 
+        let novoValor = 0
+
+        if (valorcontador > 0) {
+            valorcontador -= 1;
+            inputQuantidade.value = valorcontador;
+        }
+
+        if (valorcontador === 0) {
+            carrinhoCompra.splice(index, 1);
+            localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
+            carregaProdutos(carrinhoCompra);
+            contarProdutos();
+
+            pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
+            localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
+            calculaPedido();
+            return;
+        }
+        novoValor = parseFloat(precoProduto) * valorcontador
+        carrinhoCompra[index].valorTotal = novoValor
+        carrinhoCompra[index].quantidade = valorcontador;
+        tdValor.textContent = novoValor;
+        localStorage.setItem('carrinho', JSON.stringify(carrinhoCompra));
+
+        pedidoResumo.totalProdutos =  somarProdutos(carrinhoCompra)
+        localStorage.setItem('pedido', JSON.stringify(pedidoResumo));
+        calculaPedido()
+    };
+
+    const iconeDiminuir = document.createElement('i')
+    iconeDiminuir.classList.add('bi', 'bi-dash-lg')
+
+    divProduto.appendChild(imgProduto)
+    divProduto.appendChild(descricaoProduto)
+    tdProduto.appendChild(divProduto)
+    btnAumentar.appendChild(iconeAumentar)
+    btnDiminuir.appendChild(iconeDiminuir)
+    divQuantidade.appendChild(btnDiminuir)
+    divQuantidade.appendChild(inputQuantidade)
+    divQuantidade.appendChild(btnAumentar)
+    tdQuantidade.appendChild(divQuantidade)
+    tr.appendChild(tdProduto)
+    tr.appendChild(tdQuantidade)
+    tr.appendChild(tdValor)
+    linhaTabela.appendChild(tr)
+
+    calculaPedido()
+    });  
 };
 
 function somarProdutos(listaProdutos) {
@@ -275,4 +279,15 @@ const footer = document.getElementsByClassName('footer-direitos')
 const data = new Date()
 footer[0].innerHTML = `&copy; ${data.getFullYear()} Luciene Oliveirart - Todos os direitos reservados.`
 
+
+if (carrinhoCompra.length === 0) {
+    const carrinhoVazio = document.getElementById('carrinho-itens');
+
+    carrinhoVazio.innerHTML = '';
+
+    const mensagem = document.createElement('div');
+    mensagem.classList.add('loja-carrinho-vazio');
+    mensagem.textContent = 'Seu carrinho está vazio.';
+    carrinhoVazio.appendChild(mensagem);    
+}
 contarProdutos();
