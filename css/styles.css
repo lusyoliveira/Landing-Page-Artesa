@@ -130,52 +130,67 @@ svg {
     height: 500px;
 }
 /* Menu */
-nav {
-    padding: 5px;
+.menu {
+    padding: 5px 100px;
     color: var(--cor-branco);
     position: fixed;
     z-index: 999;    
     width: 100%;    
     box-shadow: 0 2px 5px var(--cor-cinza-escuro);
+    background-color: var(--cor-cinza-escuro);
 }
-.menu {
+.menu-lista {
     display: flex;
+    gap: 10px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .menu img {
     width: 150px;
     height: auto;
     object-fit: scale-down;
 }
-nav ul {
-    position: relative;
+.menu-lista-item span {    
+    font-size: 40px;
 }
-nav span {
-   font-size: 1.5rem;
-   display: none;
+.menu-lista-item {
+    font-size: 20px;
+    font-weight: 700;
 }
-.menu-loja li a,
-.lista-menu li a {
-    background: none;
-    border: none;
-    color: var(--cor-branco);
-    cursor: pointer;
-    margin: 5px 10px;
-    font-size: 1.2rem;
+.menu-lista-item a {
+    color:var(--cor-branco);
     text-transform: uppercase;
 }
-nav form input[type="search"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
+.menu-lista-input {
     width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 10px;
 }
-.menu-check,
-.menu-icon {
+.menu-lista-toggle-input,
+.menu-lista-toggle {
+    display:none;
+}
+.menu-lista-form {
+    flex: 2;
+}
+.menu-lista-loja {
+    display: flex;
+    position:relative;
+    gap: 20px;
+}
+.menu--lista-loja-quantidade {
     display: none;
+    background-color: var(--cor-violeta);
+    color: var(--cor-branco);
+    border-radius: 100px;
+    padding: 4px 5px;
+    font-size: .4em;
+    position: absolute;
+    top: 13px;
+    right: -10px;
 }
-
 /* Banner */
 .banner {
     background: var(--banner-fundo);
@@ -254,17 +269,6 @@ nav form input[type="search"] {
     background-color: var(--cor-violeta);
     padding: .5em;
     border-radius: 30px;
-}
-.loja-carrinho-quantidade-menu {
-    display: none;
-    background-color: var(--cor-violeta);
-    color: var(--cor-branco);
-    border-radius: 100px;
-    padding: 4px 6px;
-    font-size: .7em;
-    position: absolute;
-    top: 13px;
-    right: 0;
 }
 .loja-produto-destaque-conteudo {
     padding: 10px;
@@ -1156,7 +1160,6 @@ nav form input[type="search"] {
     display: flex;
     align-items: flex-start;
 }
-nav ul,
 .contato-conteudo,
 .testemunho-conteudo,
 .blog-principal-recentes-item,
@@ -1185,7 +1188,6 @@ nav ul,
     object-fit: cover;
     border-radius: 6px;
 }
-nav,
 .loja-categoria-conteudo,
 .loja-pagamentos-conteudo,
 .blog-principal-destaque-conteudo,
@@ -1209,35 +1211,23 @@ nav,
     }
     h4 {
         font-size: 0.8em;
-    }
+    }    
     .menu {
-        justify-content: start;
-        gap: 1em
+        padding: 0 10px;
     }
-    .lista-menu,
-    .menu-check,
-    nav form,    
-    .footer-conteudo-item,    
-    .loja-produto-miniatura,
-    .loja-produto-principal-miniatura,
-    .blog-principal-menulateral,
-    .blog-principal-conteudo-detalhes p,
-    .blog-principal-destaque-descricao p {
+    .menu-lista-form {
+        flex: 1 1 100%;
+        text-align: center;
+        order: 1;
+    }
+    .menu-lista-link {
         display: none;
     }
-    nav span,
-    .menu-icon {
-        display: flex;
-        font-size: 3.5rem;
+    .menu-lista-toggle {
+        display: block;
+        cursor: pointer;
     }
-    .menu-loja {
-        align-items: center;
-        margin-left: 35%;
-    }
-    .menu-loja li a {
-        font-size: 2.9rem;
-    }
-    .menu-check:checked ~ .lista-menu {
+    .menu-lista-toggle-input:checked ~ .menu-lista {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -1246,9 +1236,14 @@ nav,
         width: auto;
         background-color: var(--cor-cinza-escuro);
         padding: 15px;
-    }    
-    .lista-menu li{
-        margin: 10px 0;
+    }
+    .footer-conteudo-item,    
+    .loja-produto-miniatura,
+    .loja-produto-principal-miniatura,
+    .blog-principal-menulateral,
+    .blog-principal-conteudo-detalhes p,
+    .blog-principal-destaque-descricao p {
+        display: none;
     }
     .loja-pagamentos-item,
     .blog-destaque-data,
