@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Luciene  Oliveirart - Loja</title>
+    <title>Luciene Oliveirart - Loja</title>
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,40 +13,45 @@
     <!-- Cabeçalho -->
     <header class="cabecalho">
         <!-- Menu -->  
-        <nav class="menu">                
+        <nav class="menu" aria-label="menu de navegação">                
             <ul class="menu-lista">
                 <li class="menu-lista-item menu-lista-toggle">
-                    <input class="menu-lista-toggle-input" type="checkbox" id="menu-toggle">
-                    <label for="menu-toggle">
-                        <span><i class="bi bi-list"></i></span>
-                    </label>
+                    <button class="menu-toggle-button" aria-label="menu do site"><i class="bi bi-list"></i></button>
                 </li>
                 <li class="menu-lista-item">
-                    <a href="index.html" alt="Logo"><img src="img/Logo.png"></a>
-                </li>
-                <li class="menu-lista-item menu-lista-link">
-                    <a href="blog.html" alt="Blog">Blog</a>
-                </li>
-                <li class="menu-lista-item menu-lista-link">
-                    <a href="portfolio.html" alt="Portfolio">Portfolio</a>
-                </li>
-                <li class="menu-lista-item menu-lista-link">
-                    <a href="loja.html" alt="Loja">Loja</a>
-                </li>
-                <li class="menu-lista-item menu-lista-link">
-                    <a href="contato.html" alt="Contato">Contato</a>
+                    <a href="index.html" alt="Logo"><img src="img/Logo.png" title=""></a>
                 </li>
                 <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="blog.html" alt="Blog">Blog</a>
+                </li>
+                <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="portfolio.html" alt="Portfolio">Portfolio</a>
+                </li>
+                <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="loja.html" alt="Loja">Loja</a>
+                </li>
+                <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="contato.html" alt="Contato">Contato</a>
+                </li>
+                <li class="menu-lista-item menu-lista-item-form">
                     <form class="menu-lista-form" role="search">
                         <input class="menu-lista-input" type="search" title="pesquisar" placeholder="Buscar..." aria-label="Search">
                     </form>
                 </li>
                 <li class="menu-lista-item menu-lista-loja">
-                    <a href="#" alt="Conta"><i class="bi bi-person-circle"></i></a>
-                    <a href="loja/carrinho.html" alt="Carrinho"><i class="bi bi-cart"></i></a>
-                    <div class="menu--lista-loja-quantidade" id="carrinho-quantidade"></div>
+                    <a class="menu-lista-loja-link" href="#" alt="Conta"><i class="bi bi-person-circle"></i></a>
+                    <a class="menu-lista-loja-link" href="loja/carrinho.html" alt="Carrinho"><i class="bi bi-cart"></i></a>
+                    <div class="menu-lista-loja-quantidade" id="carrinho-quantidade"></div>
                 </li>
             </ul>
+
+            <!-- menu lateral só para responsivo -->
+            <aside class="menu-lateral">
+                <a href="blog.html">Blog</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="loja.html">Loja</a>
+                <a href="contato.html">Contato</a>
+            </aside>
         </nav> 
    </header>
           <!-- Carrossel -->    

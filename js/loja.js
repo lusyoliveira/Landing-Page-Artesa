@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.endsWith('carrinho.html')) {
 
+        //Mensagem de carrinho vazio
+        if (carrinhoCompra.length === 0) {
+            const carrinhoVazio = document.getElementById('carrinho-itens');
+
+            carrinhoVazio.innerHTML = '';
+
+            const mensagem = document.createElement('div');
+            mensagem.classList.add('loja-carrinho-vazio');
+            mensagem.textContent = 'Seu carrinho está vazio.';
+            carrinhoVazio.appendChild(mensagem);    
+        }
+
         //Aplica desconto do cupom
         btncupom.addEventListener('click', (evento) => {
             evento.preventDefault();
@@ -279,15 +291,4 @@ const footer = document.getElementsByClassName('footer-direitos')
 const data = new Date()
 footer[0].innerHTML = `&copy; ${data.getFullYear()} Luciene Oliveirart - Todos os direitos reservados.`
 
-
-if (carrinhoCompra.length === 0) {
-    const carrinhoVazio = document.getElementById('carrinho-itens');
-
-    carrinhoVazio.innerHTML = '';
-
-    const mensagem = document.createElement('div');
-    mensagem.classList.add('loja-carrinho-vazio');
-    mensagem.textContent = 'Seu carrinho está vazio.';
-    carrinhoVazio.appendChild(mensagem);    
-}
 contarProdutos();
