@@ -287,8 +287,4 @@ function aplicarFrete() {
     }    
 };
 
-const footer = document.getElementsByClassName('footer-direitos')
-const data = new Date()
-footer[0].innerHTML = `&copy; ${data.getFullYear()} Luciene Oliveirart - Todos os direitos reservados.`
-
 contarProdutos();

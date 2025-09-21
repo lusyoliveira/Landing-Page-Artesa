@@ -1234,16 +1234,13 @@ svg {
         display: block;
         cursor: pointer;
     }   
-    .menu-lateral.ativo {
-        right: 0; /* aparece */     
-    }
     .menu-lateral {
         position: fixed;
-        top: 0;
-        right: -250px; /* escondido fora da tela */
+        top: 120px;
+        left: -250px; /* escondido fora da tela */
         width: 250px;
         height: 100vh;
-        background: #fff;
+        background: var(--cor-preto);
         padding: 2rem 1rem;
         box-shadow: -2px 0 5px rgba(0,0,0,0.3);
         display: flex;
@@ -1251,6 +1248,37 @@ svg {
         gap: 1rem;
         transition: right 0.3s ease-in-out;
         z-index: 1000;
+    }
+    .menu-lateral.ativo {
+        left: 0; /* aparece */
+    }
+    .menu-lateral a,
+    .menu-lateral .menu-lateral-link {
+    display: block;
+    color: var(--cor-branco);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75rem 0;
+    text-decoration: none;
+    }
+    /* overlay para escurecer o fundo */
+    .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease;
+    z-index: 1000;
+    }
+    .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    }
+
+    /* garante que menu-lateral fique acima do overlay */
+    .menu-lateral {
+    z-index: 1001;
     }
     .footer-conteudo-item,    
     .loja-produto-miniatura,
