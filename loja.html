@@ -14,14 +14,15 @@
     <!-- Cabeçalho -->
     <header class="cabecalho">
         <!-- Menu -->  
-        <nav class="menu" aria-label="menu de navegação">                
+        <nav class="menu" aria-label="menu de navegação">              
+            <input class="menu-toggle-button" type="checkbox" id="menu-input">
+            <label for="menu-input" class="menu-toggle">
+                <span><i class="bi bi-list"></i></span>
+            </label>                     
+            <div class="menu-lista-item-logo" >
+                <a href="index.html" alt="Logo"><img src="img/Logo.png" title=""></a>
+            </div> 
             <ul class="menu-lista">
-                <li class="menu-lista-item menu-lista-toggle">
-                    <button class="menu-toggle-button" aria-label="menu do site"><i class="bi bi-list"></i></button>
-                </li>
-                <li class="menu-lista-item">
-                    <a href="index.html" alt="Logo"><img src="img/Logo.png" title=""></a>
-                </li>
                 <li class="menu-lista-item">
                     <a class="menu-lista-link" href="blog.html" alt="Blog">Blog</a>
                 </li>
@@ -33,26 +34,18 @@
                 </li>
                 <li class="menu-lista-item">
                     <a class="menu-lista-link" href="contato.html" alt="Contato">Contato</a>
-                </li>
-                <li class="menu-lista-item menu-lista-item-form">
+                </li>                             
+            </ul>
+            <div class="menu-lista-item-form">
                     <form class="menu-lista-form" role="search">
                         <input class="menu-lista-input" type="search" title="pesquisar" placeholder="Buscar..." aria-label="Search">
                     </form>
-                </li>
-                <li class="menu-lista-item menu-lista-loja">
+            </div>   
+            <div class="menu-lista-loja">
                     <a class="menu-lista-loja-link" href="#" alt="Conta"><i class="bi bi-person-circle"></i></a>
                     <a class="menu-lista-loja-link" href="loja/carrinho.html" alt="Carrinho"><i class="bi bi-cart"></i></a>
                     <div class="menu-lista-loja-quantidade" id="carrinho-quantidade"></div>
-                </li>
-            </ul>
-
-            <!-- menu lateral só para responsivo -->
-            <aside class="menu-lateral">
-                <a href="blog.html">Blog</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="loja.html">Loja</a>
-                <a href="contato.html">Contato</a>
-            </aside>
+            </div>
         </nav> 
    </header>
           <!-- Carrossel -->    
