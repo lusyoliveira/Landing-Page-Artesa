@@ -11,34 +11,44 @@
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header class="cabecalho">
+     <header class="cabecalho">
         <!-- Menu -->  
-        <nav>
-            <div class="menu">
-                <input type="checkbox" class="menu-check" id="menu-toggle">
-                <label for="menu-toggle" class="menu-icon">
-                    <span><i class="bi bi-list"></i></span>
-                </label>
-                <a href="index.html" alt="Logo"><img src="../img/Logo.png"></a>
-                <ul class="lista-menu">
-                    <li><a href="../blog.html" alt="Blog">Blog</a></li>
-                    <li><a href="../portfolio.html" alt="Portfolio">Portfolio</a></li>
-                    <li><a href="../loja.html" alt="Loja">Loja</a></li>
-                    <li><a href="../contato.html" alt="Contato">Contato</a></li>
-                </ul>
-                <form role="search">
-                    <input type="search" title="pesquisar" placeholder="Buscar..." aria-label="Search">
-                </form>
-                <ul class="menu-loja">
-                    <li><a href="#" alt="Conta"><i class="bi bi-person-circle"></i></a></li>
-                    <li><a href="./loja/carrinho.html" alt="Carrinho"><i class="bi bi-cart"></i></a></li>
-                    <div class="loja-carrinho-quantidade-menu" id="carrinho-quantidade"></div>
-                </ul>
+        <nav class="menu" aria-label="menu de navegação">              
+            <input class="menu-toggle-button" type="checkbox" id="menu-input">
+            <label for="menu-input" class="menu-toggle">
+                <span><i class="bi bi-list"></i></span>
+            </label>                     
+            <div class="menu-lista-item-logo" >
+                <a href="../index.html" alt="Logo"><img src="../img/Logo.png" title=""></a>
+            </div> 
+            <ul class="menu-lista">
+                <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="../blog.html" alt="Blog">Blog</a>
+                </li>
+                <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="../portfolio.html" alt="Portfolio">Portfolio</a>
+                </li>
+                <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="../loja.html" alt="Loja">Loja</a>
+                </li>
+                <li class="menu-lista-item">
+                    <a class="menu-lista-link" href="../contato.html" alt="Contato">Contato</a>
+                </li>                             
+            </ul>
+            <div class="menu-lista-item-form">
+                    <form class="menu-lista-form" role="search">
+                        <input class="menu-lista-input" type="search" title="pesquisar" placeholder="Buscar..." aria-label="Search">
+                    </form>
+            </div>   
+            <div class="menu-lista-loja">
+                    <a class="menu-lista-loja-link" href="#" alt="Conta"><i class="bi bi-person-circle"></i></a>
+                    <a class="menu-lista-loja-link" href="./loja/carrinho.html" alt="Carrinho"><i class="bi bi-cart"></i></a>
+                    <div class="menu-lista-loja-quantidade" id="carrinho-quantidade"></div>
             </div>
         </nav> 
-    </header>
-
-    <!-- Conteúdo Principal -->
+   </header>
+    
+   <!-- Conteúdo Principal -->
     <main class="container">
         <section class="loja-conteudo-principal">
             <div class="loja-produto-principal">                

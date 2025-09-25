@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
 //Adiciona item ao carrinho
 btnComprar.forEach((botao) => {
 
