@@ -1,0 +1,102 @@
+@use 'variaveis';
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background: linear-gradient(variaveis.$cor-gradiente-primaria, variaveis.$cor-gradiente-secundaria);
+    color: variaveis.$cor-primaria;
+    font-family: variaveis.$fonte;
+
+    a {
+        text-decoration: none;
+        &:hover{
+            color: variaveis.$cor-secundaria;
+        }
+    }
+        
+    button, input, optgroup, select, textarea {
+        margin: 0;
+        font-family: variaveis.$fonte;
+        font-size: inherit;
+        line-height: inherit;
+    }
+    button {
+        background-color: variaveis.$cor-terciaria;
+        color: variaveis.$cor-primaria;
+        border-radius: 5px;
+        padding: 7px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 0.9rem;
+    }
+    button:hover {
+    background-color: variaveis.$cor-secundaria;
+    }
+    input, textarea, select {
+        border: 1px solid variaveis.$cor-cinza;
+        border-radius:variaveis.$borda-padrao;
+        padding: variaveis.$espacamento-padrao;
+        margin: .5em 0;
+        display: block;
+    }
+    input:focus, textarea:focus, select:focus {
+        outline: none;
+    }
+    ul {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    a,
+    a:visited,
+    a:hover {
+        color: variaveis.$cor-secundaria;
+    }
+    a img {
+        border: 0;
+    }
+    p, span, label {
+        font-size: .9em;
+        font-weight: 700;
+    }
+    h1,h2, h3, h4, h5 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: variaveis.$cor-primaria;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 2.25em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    h4 {
+        font-size: .9em;
+    }
+    h5 {
+        font-size: .5em;
+    }
+    .titulo {
+        color: variaveis.$cor-terciaria;
+        font-size: 3.5rem; 
+        font-weight: bold;
+        text-shadow: 2px 2px 5px variaveis.$cor-secundaria;
+    }
+    .sub-titulo {
+        text-align: center;
+        color: variaveis.$cor-primaria; 
+    }
+    .clearfix {
+    clear: both;
+    }
+    svg {
+        display: block;    
+        color: variaveis.$cor-secundaria;
+    }
+}

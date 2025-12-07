@@ -1,0 +1,72 @@
+@use '/styles/base/variaveis';
+@use '../utils/mixins';
+
+.footer {
+    background-color: variaveis.$cor-cinza-escuro;
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+    font-family: variaveis.$fonte;
+}
+.footer-conteudo {
+    gap:1.25em; 
+    margin: 0 50px;
+    @include mixins.flexbox($justify: flex-start, $align: flex-start);
+}
+.footer-conteudo a {
+    color: variaveis.$cor-primaria;
+}
+.footer-conteudo-item-social,
+.footer-conteudo-item-sobre,
+.footer-conteudo-item {
+    flex: 1; 
+    padding: 20px;
+    align-items: center;
+}
+.footer-conteudo-item-social img,
+.footer-conteudo-item img {
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
+    justify-items: center;
+}
+.footer-conteudo-social {
+    font-size: 1.6em;
+    margin: 1em auto;
+    text-align: center;
+}
+.footer-conteudo-item-sobre ul,
+.footer-conteudo-item ul {
+    text-align: left;
+    list-style-type: none;
+    padding: 5px;
+}
+.footer-conteudo-item-titulo {
+    color: variaveis.$cor-terciaria !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-bottom: 3px solid variaveis.$cor-primaria;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+.footer-conteudo-item-destaque {
+    float:left;
+    width:100%;
+    padding:0;
+    margin: 0 0 25px
+}
+.footer-conteudo-item-destaque img {
+    object-fit: cover;
+    border-radius: 6px;
+    position:relative;
+    float:left;
+    width:64px;
+    height:64px;
+    overflow:hidden;
+    z-index:1;
+    margin:0 13px 0 0;
+}
+.footer-direitos {
+    font-size: 1.3em;
+    text-align: center;
+}

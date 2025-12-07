@@ -1,0 +1,44 @@
+.carrossel-container {
+    display: flex;
+    width: 100%;    
+    gap: 1.25em;
+}
+.carrossel-column {
+    flex: 1;
+    position: relative;
+}
+.carrossel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carrossel img {
+    width: 100%;
+    display: none;
+    animation: fade 1s ease-in-out;
+}
+.carrossel img.active {
+    display: block;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.carrossel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+.carrossel-controls button {
+    background: transparent;
+    color: variaveis.$cor-terciaria;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 2em;
+}

@@ -1,0 +1,187 @@
+@use '/styles/base/variaveis';
+@use '../utils/mixins';
+
+.conteudo,
+.produtos-conteudo  {
+    margin: 4em auto;
+}
+.cabecalho-conteudo {    
+    background: variaveis.$banner-cabecalho;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+}
+.conteudo {
+    animation: aparecer linear;
+    animation-timeline: view() ;
+    animation-range: entry 0;
+}
+
+/* sobre*/
+.sobre-conteudo {
+    display: flex;
+    justify-content: space-around;
+    gap:1em;
+    margin: 4em 20%;
+    @include mixins.flexbox($justify: space-around);
+}
+.sobre-imagem img {
+    width: auto;
+    height: 400px;
+}
+.sobre-descricao {
+    text-align:justify;
+    color: variaveis.$cor-primaria;
+}
+.sobre-descricao p {
+    font-size: 1.25rem;
+}
+.sobre-social {
+    padding: 5px 0;
+    margin:5px auto;  
+    border-top: 3px solid variaveis.$cor-primaria;
+}
+.sobre-social a {  
+    margin:10px 5px;
+    font-size: 2em;
+    color: variaveis.$cor-primaria;
+}
+/* Testemunho */
+.testemunho {
+    background-color: variaveis.$cor-cinza-escuro;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    margin: 30px 0px 30px 0px;
+}
+.testemunho-conteudo {
+    display: flex;
+    gap: 1em;
+    padding: .8em;
+    margin: auto 10%;
+    background-color:transparent;
+    text-align: center;
+    @include mixins.flexbox()
+}
+.testemunho-imagem {
+    width: 60px;
+    height: 60px;
+}
+.testemunho-pessoa {
+    @include mixins.flexbox($align: flex-start);
+}
+.testemunho-pessoa img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 70px;
+}
+.testemunho-item, 
+.testemunho-descricao {
+    @include mixins.flexbox($direction: column);
+}
+.testemunho-descricao h3 {
+    font-size: 1em;
+    margin: 0;
+}
+.testemunho-classificacao {
+    font-size: .9em;
+    text-align:center;
+    color: variaveis.$cor-terciaria;
+}
+.testemunho-item p {
+    display: block;
+    color: variaveis.$cor-primaria;
+}
+/* Produtos */
+
+.produtos-descricao {
+    color: variaveis.$cor-primaria;
+    margin-bottom: 0.8em;
+    text-align: center;
+    font-size: 1.2em;
+}
+.produtos-conteudo  {  
+    padding: 10px;
+    margin: auto 15%;
+    @include mixins.flexbox($direction: column, $justify: center, $align: center);
+}
+.produtos-detalhes{
+    @include mixins.flexbox($justify: space-between);
+}
+.produtos-conteudo-item {
+    gap: 0.3em;
+    text-align: center;
+    @include mixins.flexbox($direction: column, $justify: space-between, $align: center);
+}
+.produtos-conteudo-item p {
+    display: block;
+    color: variaveis.$cor-primaria;
+}
+.produtos-conteudo-item img {
+    height: 135px;
+    width: 135px;
+    background: variaveis.$cor-cinza-claro;
+    border: 5px solid variaveis.$cor-cinza-claro;
+    margin: 5px;
+    object-fit: cover;
+}
+/* Blog */
+.blog {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    margin: 30px 0px 30px 0px;
+}
+.blog-destaque-descricao {
+    color: variaveis.$cor-primaria;
+    margin-bottom: 0.8em;
+    text-align: center;
+    font-size: 1.2em;
+}
+.blog-destaque-conteudo {
+    gap: 1.25em;
+    margin: auto 10em;
+    @include mixins.flexbox($justify: space-between, $align: center);
+}
+.blog-destaque-conteudo > div {
+    flex: 1;
+}
+.blog-destaque-conteudo-item {
+    transition: 1s;
+    background-color: variaveis.$cor-cinza-claro;
+    width: 500px;
+    @include mixins.flexbox($direction: column);
+}
+.blog-destaque-conteudo-item img {
+    height: 316px;
+    width: auto;
+    transition: 1s;
+    padding: 1em;
+    object-fit: cover;
+}
+.blog-destaque-conteudo-item:hover img {
+    transform: scale(1.05);
+}
+.blog-destaque-detalhes {
+    gap: .6em;
+    margin: 1em;
+    @include mixins.flexbox($direction: column);
+}
+.blog-destaque-detalhes h3,
+.blog-destaque-detalhes a {
+    color: variaveis.$cor-terciaria; 
+    letter-spacing: 1px;
+    text-align: left;
+    text-transform: uppercase;
+}
+.blog-destaque-data,
+.blog-destaque-link {
+    justify-items: center; 
+    gap: .3em;
+    color: variaveis.$cor-terciaria;
+    font-size: 1em;
+    @include mixins.flexbox();
+}

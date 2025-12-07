@@ -1,3 +1,7 @@
-body {
-    color: burlywood;
-}''
+@use 'base/reset';
+@use 'base/variaveis';
+@use 'layout/cabecalho';
+@use 'layout/menu';
+@use 'layout/rodape';
+@use 'paginas/home';
+@use 'utils/mixins';

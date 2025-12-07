@@ -1,0 +1,71 @@
+
+@use '/styles/base/variaveis';
+@use '../utils/mixins';
+
+.header {
+    margin: 0 auto;
+    max-width: 75rem;
+}
+.menu {
+    gap: 3.5rem;
+    padding: 5px 100px;
+    color: variaveis.$cor-primaria;
+    z-index: 999;    
+    width: 100%;    
+    box-shadow: 0 2px 5px variaveis.$cor-cinza-escuro;
+    background-color: variaveis.$cor-cinza-escuro;
+    @include mixins.flexbox($justify: space-between, $align: center, $wrap: wrap);
+}
+.menu-toggle span {
+    font-size: 30px;
+    color:variaveis.$cor-primaria;
+}
+.menu-toggle-button,
+.menu-toggle {
+    display:none;
+}
+.menu-lista {
+    gap: 3.5rem;
+    @include mixins.flexbox($justify: space-between, $align: center);
+}
+.menu-lista-item-logo img {
+    width: 100%;
+    height: 41px;
+    object-fit: scale-down;
+}
+.menu-lista-loja-link,
+.menu-lista-loja-link:hover,
+.menu-lista-loja-link:visited,
+.menu-lista-link,
+.menu-lista-link:hover,
+.menu-lista-link:visited {
+    color:variaveis.$cor-primaria;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+.menu-lista-input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 10px;
+}
+.menu-lista-item-form {
+    flex: 2;
+}
+.menu-lista-loja {
+    position: relative;
+    gap: 20px;
+    @include mixins.flexbox()
+}
+.menu-lista-loja-quantidade {
+    display: none;
+    background-color:variaveis.$cor-terciaria;
+    color: variaveis.$cor-primaria;
+    border-radius: 100px;
+    padding: 4px 5px;
+    font-size: .4em;
+    position: absolute;
+    top: 13px;
+    right: -10px;
+}
